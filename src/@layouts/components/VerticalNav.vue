@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { Component } from 'vue'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { VNodeRenderer } from './VNodeRenderer'
 import { injectionKeyIsVerticalNavHovered, useLayouts } from '@layouts'
 import { VerticalNavGroup, VerticalNavLink, VerticalNavSectionTitle } from '@layouts/components'
 import { config } from '@layouts/config'
 import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '@layouts/types'
+import type { Component } from 'vue'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { VNodeRenderer } from './VNodeRenderer'
 
 interface Props {
   tag?: string | Component
@@ -91,30 +91,32 @@ const handleNavScroll = (evt: Event) => {
         </RouterLink>
         <!-- 👉 Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
-        <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
+        <!--
+          <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
           <Component
-            :is="config.app.iconRenderer || 'div'"
-            v-show="isCollapsed && !hideTitleAndIcon"
-            class="header-action"
-            v-bind="config.icons.verticalNavUnPinned"
-            @click="isCollapsed = !isCollapsed"
+          :is="config.app.iconRenderer || 'div'"
+          v-show="isCollapsed && !hideTitleAndIcon"
+          class="header-action"
+          v-bind="config.icons.verticalNavUnPinned"
+          @click="isCollapsed = !isCollapsed"
           />
           <Component
-            :is="config.app.iconRenderer || 'div'"
-            v-show="!isCollapsed && !hideTitleAndIcon"
-            class="header-action"
-            v-bind="config.icons.verticalNavPinned"
-            @click="isCollapsed = !isCollapsed"
+          :is="config.app.iconRenderer || 'div'"
+          v-show="!isCollapsed && !hideTitleAndIcon"
+          class="header-action"
+          v-bind="config.icons.verticalNavPinned"
+          @click="isCollapsed = !isCollapsed"
           />
-        </template>
-        <template v-else>
+          </template>
+          <template v-else>
           <Component
-            :is="config.app.iconRenderer || 'div'"
-            class="header-action"
-            v-bind="config.icons.close"
-            @click="toggleIsOverlayNavActive(false)"
+          :is="config.app.iconRenderer || 'div'"
+          class="header-action"
+          v-bind="config.icons.close"
+          @click="toggleIsOverlayNavActive(false)"
           />
-        </template>
+          </template>
+        -->
       </slot>
     </div>
     <slot name="before-nav-items">
