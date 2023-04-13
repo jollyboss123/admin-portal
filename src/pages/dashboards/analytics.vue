@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import AnalyticsAward from '@/views/dashboards/analytics/AnalyticsAward.vue'
 import AnalyticsBarCharts from '@/views/dashboards/analytics/AnalyticsBarCharts.vue'
-import AnalyticsDepositWithdraw from '@/views/dashboards/analytics/AnalyticsDepositWithdraw.vue'
 import AnalyticsPerformance from '@/views/dashboards/analytics/AnalyticsPerformance.vue'
 import AnalyticsSalesByCountries from '@/views/dashboards/analytics/AnalyticsSalesByCountries.vue'
 import AnalyticsTotalEarning from '@/views/dashboards/analytics/AnalyticsTotalEarning.vue'
 import AnalyticsTotalProfitLineCharts from '@/views/dashboards/analytics/AnalyticsTotalProfitLineCharts.vue'
-import AnalyticsTransactions from '@/views/dashboards/analytics/AnalyticsTransactions.vue'
-import AnalyticsUserTable from '@/views/dashboards/analytics/AnalyticsUserTable.vue'
 import AnalyticsWeeklyOverview from '@/views/dashboards/analytics/AnalyticsWeeklyOverview.vue'
 import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
 
@@ -32,19 +28,23 @@ const newProject = {
 
 <template>
   <VRow class="match-height">
-    <VCol
+    <!--
+      <VCol
       cols="12"
       md="4"
-    >
+      >
       <AnalyticsAward />
-    </VCol>
+      </VCol>
+    -->
 
-    <VCol
+    <!--
+      <VCol
       cols="12"
       md="8"
-    >
+      >
       <AnalyticsTransactions />
-    </VCol>
+      </VCol>
+    -->
 
     <VCol
       cols="12"
@@ -102,12 +102,14 @@ const newProject = {
       <AnalyticsPerformance />
     </VCol>
 
-    <VCol
+    <!--
+      <VCol
       cols="12"
       md="8"
-    >
+      >
       <AnalyticsDepositWithdraw />
-    </VCol>
+      </VCol>
+    -->
 
     <VCol
       cols="12"
@@ -116,11 +118,13 @@ const newProject = {
       <AnalyticsSalesByCountries />
     </VCol>
 
-    <VCol
+    <!--
+      <VCol
       cols="12"
       md="8"
-    >
+      >
       <AnalyticsUserTable />
-    </VCol>
+      </VCol>
+    -->
   </VRow>
 </template>
