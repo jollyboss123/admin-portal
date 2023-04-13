@@ -1,105 +1,230 @@
 export default [
   { heading: 'Apps & Pages' },
   {
-    title: 'Email',
-    icon: { icon: 'mdi-email-outline' },
-    to: 'apps-email',
+    title: 'General Settings',
+    icon: { icon: 'mdi-cog-outline' },
+    children: [
+      {
+        title: 'Company',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Country',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'POS Setting',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'PIN Approval Reason',
+        children: [
+          { title: 'Price Override Reason' },
+          { title: 'Refund Reason' },
+        ],
+      },
+    ],
   },
   {
-    title: 'Chat',
-    icon: { icon: 'mdi-message-outline' },
-    to: 'apps-chat',
+    title: 'Product Listing',
+    icon: { icon: 'mdi-shopping-outline' },
+    children: [
+      {
+        title: 'Product Type',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Product Category',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Product Brand',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Product Set',
+        children: [
+          { title: 'Price Override Reason' },
+          { title: 'Refund Reason' },
+        ],
+      },
+      {
+        title: 'Product',
+        children: [
+          { title: 'Price Override Reason' },
+          { title: 'Refund Reason' },
+          { title: 'Update Price' },
+        ],
+      },
+    ],
   },
   {
-    title: 'Calendar',
-    icon: { icon: 'mdi-calendar-blank-outline' },
-    to: 'apps-calendar',
+    title: 'Promotion',
+    icon: { icon: 'mdi-sale-outline' },
+    children: [
+      { title: 'List' },
+      { title: 'Create Combo' },
+      { title: 'Create GWP' },
+      { title: 'Create Tier Discount' },
+      { title: 'Create Card Promo' },
+    ],
   },
   {
-    title: 'Invoice',
-    icon: { icon: 'mdi-file-document-outline' },
+    title: 'Cart Management',
+    icon: { icon: 'mdi-cart-outline' },
 
     children: [
-      { title: 'List', to: 'apps-invoice-list' },
-      { title: 'Preview', to: { name: 'apps-invoice-preview-id', params: { id: '5036' } } },
-      { title: 'Edit', to: { name: 'apps-invoice-edit-id', params: { id: '5036' } } },
-      { title: 'Add', to: 'apps-invoice-add' },
+      {
+        title: 'Seal',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Cart Category',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Drawer',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Cart Template',
+        children: [
+          { title: 'Price Override Reason' },
+          { title: 'Refund Reason' },
+        ],
+      },
     ],
   },
   {
-    title: 'User',
-    icon: { icon: 'mdi-account-outline' },
+    title: 'Airline Data',
+    icon: { icon: 'mdi-airplane-takeoff' },
     children: [
-      { title: 'List', to: 'apps-user-list' },
-      { title: 'View', to: { name: 'apps-user-view-id', params: { id: 21 } } },
+      {
+        title: 'Flight',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
     ],
   },
   {
-    title: 'Pages',
-    icon: { icon: 'mdi-file-outline' },
+    title: 'Cashier & Finance',
+    icon: { icon: 'mdi-currency-usd' },
     children: [
       {
-        title: 'Authentication',
+        title: 'Currency',
         children: [
-          {
-            title: 'Login',
-            children: [
-              { title: 'Login v1', to: 'pages-authentication-login-v1', target: '_blank' },
-              { title: 'Login v2', to: 'pages-authentication-login-v2', target: '_blank' },
-            ],
-          },
-          {
-            title: 'Register',
-            children: [
-              { title: 'Register v1', to: 'pages-authentication-register-v1', target: '_blank' },
-              { title: 'Register v2', to: 'pages-authentication-register-v2', target: '_blank' },
-            ],
-          },
-          {
-            title: 'Verify Email',
-            children: [
-              { title: 'Verify Email v1', to: 'pages-authentication-verify-email-v1', target: '_blank' },
-              { title: 'Verify Email v2', to: 'pages-authentication-verify-email-v2', target: '_blank' },
-            ],
-          },
-          {
-            title: 'Forgot Password',
-            children: [
-              { title: 'Forgot Password v1', to: 'pages-authentication-forgot-password-v1', target: '_blank' },
-              { title: 'Forgot Password v2', to: 'pages-authentication-forgot-password-v2', target: '_blank' },
-            ],
-          },
-          {
-            title: 'Reset Password',
-            children: [
-              { title: 'Reset Password v1', to: 'pages-authentication-reset-password-v1', target: '_blank' },
-              { title: 'Reset Password v2', to: 'pages-authentication-reset-password-v2', target: '_blank' },
-            ],
-          },
-          {
-            title: 'Two Steps',
-            children: [
-              { title: 'Two Steps v1', to: 'pages-authentication-two-steps-v1', target: '_blank' },
-              { title: 'Two Steps v2', to: 'pages-authentication-two-steps-v2', target: '_blank' },
-            ],
-          },
+          { title: 'List' },
+          { title: 'Create' },
         ],
       },
-      { title: 'Help Center', to: 'pages-help-center' },
-      { title: 'User Profile', to: { name: 'pages-user-profile-tab', params: { tab: 'profile' } } },
-      { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
-      { title: 'Pricing', to: 'pages-pricing' },
-      { title: 'FAQ', to: 'pages-faq' },
       {
-        title: 'Miscellaneous',
+        title: 'Exchange Rate',
         children: [
-          { title: 'Coming Soon', to: 'pages-misc-coming-soon', target: '_blank' },
-          { title: 'Under Maintenance', to: 'pages-misc-under-maintenance', target: '_blank' },
-          { title: 'Page Not Found - 404', to: 'pages-misc-not-found', target: '_blank' },
-          { title: 'Not Authorized - 401', to: 'pages-misc-not-authorized', target: '_blank' },
-          { title: 'Server Error - 500', to: 'pages-misc-internal-server-error', target: '_blank' },
+          { title: 'List' },
+          { title: 'Create' },
         ],
       },
+      {
+        title: 'Tax Rate',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Cash Bag',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Card Blacklist',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+      {
+        title: 'Card Whitelist',
+        children: [
+          { title: 'List' },
+          { title: 'Create' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Reporting',
+    icon: { icon: 'mdi-chart-box-outline' },
+    children: [
+      {
+        title: 'Master Sales Report',
+      },
+      {
+        title: 'Overall Sales Summary Report',
+      },
+      {
+        title: 'Missed Sales Report',
+      },
+      {
+        title: 'Cash Bag (Crew) Report',
+      },
+      {
+        title: 'Cashier Cash Collection Report',
+      },
+      {
+        title: 'Crew Position Report',
+      },
+      {
+        title: 'Sales By Flight Number Report',
+      },
+      {
+        title: 'Cart Device Report',
+      },
+      {
+        title: 'Seal Report',
+      },
+      {
+        title: 'Stock Report',
+      },
+    ],
+  },
+  {
+    title: 'Transactions',
+    icon: { icon: 'mdi-point-of-sale' },
+    children: [
+      { title: 'List' },
+      { title: 'Create' },
     ],
   },
 ]

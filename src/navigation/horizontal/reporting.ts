@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'Cart Management',
+    title: 'Reporting',
     icon: { icon: 'mdi-chart-donut' },
     children: [
       { title: 'Apex Chart', to: 'charts-apex-chart', icon: { icon: 'mdi-chart-bell-curve' } },
@@ -8,3 +8,4 @@ export default [
     ],
   },
 ]
+

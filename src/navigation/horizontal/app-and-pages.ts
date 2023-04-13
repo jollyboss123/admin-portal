@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'Apps & Pages',
+    title: 'General Settings',
     icon: { icon: 'mdi-package-variant' },
     children: [
       {

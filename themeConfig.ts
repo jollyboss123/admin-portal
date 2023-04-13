@@ -11,7 +11,7 @@ import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layo
 
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
-    title: 'Materio',
+    title: 'Jolly',
 
     // if you have SVG logo and want it to adapt according to theme color, you have to apply color as `color: rgb(var(--v-global-theme-primary))`
     logo: h('div', { innerHTML: logo, style: 'line-height:0; color: rgb(var(--v-global-theme-primary))' }),
@@ -21,7 +21,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     enableI18n: true,
     theme: 'light',
     isRtl: false,
-    skin: Skins.Default,
+    skin: Skins.Bordered,
     routeTransition: RouteTransitions.Fade,
     iconRenderer: VIcon,
   },
@@ -31,9 +31,9 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   },
   footer: { type: FooterType.Static },
   verticalNav: {
-    isVerticalNavCollapsed: false,
+    isVerticalNavCollapsed: true,
     defaultNavItemIconProps: { icon: 'mdi-circle-outline' },
-    isVerticalNavSemiDark: false,
+    isVerticalNavSemiDark: true,
   },
   horizontalNav: {
     type: 'sticky',

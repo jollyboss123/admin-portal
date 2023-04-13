@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'Others',
+    title: 'Airline Data',
     icon: { icon: 'mdi-dots-horizontal' },
     children: [
       {

@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'Forms',
+    title: 'Promotion',
     icon: { icon: 'mdi-checkbox-multiple-outline' },
     children: [
       {

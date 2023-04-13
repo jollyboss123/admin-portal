@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'User Interface',
+    title: 'Product Listing',
     icon: { icon: 'mdi-layers-outline' },
     children: [
       {
