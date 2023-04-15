@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { UserProperties } from '@/@fake-db/types'
-import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
-import { useUserListStore } from '@/views/apps/user/useUserListStore'
-import { avatarText } from '@core/utils/formatters'
+import type { UserProperties } from '@/@fake-db/types';
+import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue';
+import { useUserListStore } from '@/views/apps/user/useUserListStore';
+import { avatarText } from '@core/utils/formatters';
 
 // 👉 Store
 const userListStore = useUserListStore()
@@ -309,7 +309,7 @@ const addNewUser = (userData: UserProperties) => {
                 <div class="d-flex flex-column">
                   <h6 class="text-sm font-weight-medium">
                     <RouterLink
-                      :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
+                      :to="{ name: 'other-administrator-view-id', params: { id: user.id } }"
                       class="font-weight-medium user-list-name"
                     >
                       {{ user.fullName }}
