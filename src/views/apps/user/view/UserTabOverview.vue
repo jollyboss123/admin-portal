@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import UserInvoiceTable from './UserInvoiceTable.vue'
+
+// import UserInvoiceTable from './UserInvoiceTable.vue'
 
 // Images
 import avatar2 from '@images/avatars/avatar-2.png'
@@ -247,8 +248,10 @@ const resolveUserProgressVariant = (progress: number) => {
       </VCard>
     </VCol>
 
-    <VCol cols="12">
+    <!--
+      <VCol cols="12">
       <UserInvoiceTable />
-    </VCol>
+      </VCol>
+    -->
   </VRow>
 </template>

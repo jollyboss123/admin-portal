@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import type { Invoice } from '@/@fake-db/types'
-import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
+import type { Invoice } from '@/@fake-db/types';
+
+// import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
 
 // 👉 Store
-const invoiceListStore = useInvoiceStore()
+// const invoiceListStore = useInvoiceStore()
 
 const searchQuery = ref('')
 const selectedStatus = ref('')
@@ -16,20 +17,20 @@ const selectedRows = ref<string[]>([])
 
 // 👉 Fetch Invoices
 watchEffect(() => {
-  invoiceListStore.fetchInvoices(
-    {
-      q: searchQuery.value,
-      status: selectedStatus.value,
-      perPage: rowPerPage.value,
-      currentPage: currentPage.value,
-    },
-  ).then(response => {
-    invoices.value = response.data.invoices
-    totalPage.value = response.data.totalPage
-    totalInvoices.value = response.data.totalInvoices
-  }).catch(error => {
-    console.log(error)
-  })
+  // invoiceListStore.fetchInvoices(
+  //   {
+  //     q: searchQuery.value,
+  //     status: selectedStatus.value,
+  //     perPage: rowPerPage.value,
+  //     currentPage: currentPage.value,
+  //   },
+  // ).then(response => {
+  //   invoices.value = response.data.invoices
+  //   totalPage.value = response.data.totalPage
+  //   totalInvoices.value = response.data.totalInvoices
+  // }).catch(error => {
+  //   console.log(error)
+  // })
 })
 
 // 👉 watching current page
