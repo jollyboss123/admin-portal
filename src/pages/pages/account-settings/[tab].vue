@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
-import AccountSettingsAccount from '@/views/pages/account-settings/AccountSettingsAccount.vue'
-import AccountSettingsBillingAndPlans from '@/views/pages/account-settings/AccountSettingsBillingAndPlans.vue'
-import AccountSettingsConnections from '@/views/pages/account-settings/AccountSettingsConnections.vue'
-import AccountSettingsNotification from '@/views/pages/account-settings/AccountSettingsNotification.vue'
-import AccountSettingsSecurity from '@/views/pages/account-settings/AccountSettingsSecurity.vue'
+import AccountSettingsAccount from '@/views/pages/account-settings/AccountSettingsAccount.vue';
+import { useRoute } from 'vue-router';
+
+// import AccountSettingsBillingAndPlans from '@/views/pages/account-settings/AccountSettingsBillingAndPlans.vue'
+// import AccountSettingsConnections from '@/views/pages/account-settings/AccountSettingsConnections.vue'
+// import AccountSettingsNotification from '@/views/pages/account-settings/AccountSettingsNotification.vue'
+// import AccountSettingsSecurity from '@/views/pages/account-settings/AccountSettingsSecurity.vue'
 
 const route = useRoute()
 
@@ -52,24 +53,32 @@ const tabs = [
       </VWindowItem>
 
       <!-- Security -->
-      <VWindowItem value="security">
+      <!--
+        <VWindowItem value="security">
         <AccountSettingsSecurity />
-      </VWindowItem>
+        </VWindowItem>
+      -->
 
       <!-- Billing -->
-      <VWindowItem value="billing-plans">
+      <!--
+        <VWindowItem value="billing-plans">
         <AccountSettingsBillingAndPlans />
-      </VWindowItem>
+        </VWindowItem>
+      -->
 
       <!-- Notification -->
-      <VWindowItem value="notification">
+      <!--
+        <VWindowItem value="notification">
         <AccountSettingsNotification />
-      </VWindowItem>
+        </VWindowItem>
+      -->
 
       <!-- Connections -->
-      <VWindowItem value="connection">
+      <!--
+        <VWindowItem value="connection">
         <AccountSettingsConnections />
-      </VWindowItem>
+        </VWindowItem>
+      -->
     </VWindow>
   </div>
 </template>
