@@ -21,7 +21,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     enableI18n: true,
     theme: 'light',
     isRtl: false,
-    skin: Skins.Bordered,
+    skin: Skins.Default,
     routeTransition: RouteTransitions.Fade,
     iconRenderer: VIcon,
   },
@@ -33,7 +33,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   verticalNav: {
     isVerticalNavCollapsed: false,
     defaultNavItemIconProps: { icon: 'mdi-circle-outline' },
-    isVerticalNavSemiDark: true,
+    isVerticalNavSemiDark: false,
   },
   horizontalNav: {
     type: 'sticky',

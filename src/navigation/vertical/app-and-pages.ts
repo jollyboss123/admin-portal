@@ -7,29 +7,29 @@ export default [
       {
         title: 'Company',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Country',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'POS Setting',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
-        title: 'PIN Approval Reason',
+        title: 'Approval Reason',
         children: [
-          { title: 'Price Override Reason' },
-          { title: 'Refund Reason' },
+          { title: 'Price Override', to: null },
+          { title: 'Refund', to: null },
         ],
       },
     ],
@@ -41,37 +41,37 @@ export default [
       {
         title: 'Product Type',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Product Category',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Product Brand',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Product Set',
         children: [
-          { title: 'Price Override Reason' },
-          { title: 'Refund Reason' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Product',
         children: [
-          { title: 'Price Override Reason' },
-          { title: 'Refund Reason' },
-          { title: 'Update Price' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
+          { title: 'Update Price', to: null },
         ],
       },
     ],
@@ -80,44 +80,44 @@ export default [
     title: 'Promotion',
     icon: { icon: 'mdi-sale-outline' },
     children: [
-      { title: 'List' },
-      { title: 'Create Combo' },
-      { title: 'Create GWP' },
-      { title: 'Create Tier Discount' },
-      { title: 'Create Card Promo' },
+      { title: 'List', to: null },
+      { title: 'Create Combo', to: null },
+      { title: 'Create GWP', to: null },
+      { title: 'Create Tier Discount', to: null },
+      { title: 'Create Card Promo', to: null },
     ],
   },
   {
     title: 'Cart Management',
-    icon: { icon: 'mdi-cart-outline' },
+    icon: { icon: 'mdi-cart-outline', to: null },
 
     children: [
       {
         title: 'Seal',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Cart Category',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Drawer',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Cart Template',
         children: [
-          { title: 'Price Override Reason' },
-          { title: 'Refund Reason' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
     ],
@@ -129,8 +129,8 @@ export default [
       {
         title: 'Flight',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
     ],
@@ -142,43 +142,43 @@ export default [
       {
         title: 'Currency',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Exchange Rate',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Tax Rate',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Cash Bag',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Card Blacklist',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
       {
         title: 'Card Whitelist',
         children: [
-          { title: 'List' },
-          { title: 'Create' },
+          { title: 'List', to: null },
+          { title: 'Create', to: null },
         ],
       },
     ],
@@ -188,34 +188,34 @@ export default [
     icon: { icon: 'mdi-chart-box-outline' },
     children: [
       {
-        title: 'Master Sales Report',
+        title: 'Master Sales Report', to: null,
       },
       {
-        title: 'Overall Sales Summary Report',
+        title: 'Overall Sales Summary Report', to: null,
       },
       {
-        title: 'Missed Sales Report',
+        title: 'Missed Sales Report', to: null,
       },
       {
-        title: 'Cash Bag (Crew) Report',
+        title: 'Cash Bag (Crew) Report', to: null,
       },
       {
-        title: 'Cashier Cash Collection Report',
+        title: 'Cashier Cash Collection Report', to: null,
       },
       {
-        title: 'Crew Position Report',
+        title: 'Crew Position Report', to: null,
       },
       {
-        title: 'Sales By Flight Number Report',
+        title: 'Sales By Flight Number Report', to: null,
       },
       {
-        title: 'Cart Device Report',
+        title: 'Cart Device Report', to: null,
       },
       {
-        title: 'Seal Report',
+        title: 'Seal Report', to: null,
       },
       {
-        title: 'Stock Report',
+        title: 'Stock Report', to: null,
       },
     ],
   },
@@ -223,8 +223,8 @@ export default [
     title: 'Transactions',
     icon: { icon: 'mdi-point-of-sale' },
     children: [
-      { title: 'List' },
-      { title: 'Create' },
+      { title: 'List', to: null },
+      { title: 'Create', to: null },
     ],
   },
 ]
