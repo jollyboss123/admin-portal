@@ -16,7 +16,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
       error-description="We couldn't find the page you are looking for."
     />
 
-    <!-- 👉 Image -->
+    <!-- Image -->
     <div class="misc-avatar w-100 text-center">
       <VImg
         :src="misc404"
@@ -32,7 +32,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
       </VBtn>
     </div>
 
-    <!-- 👉 Footer -->
+    <!-- Footer -->
     <VImg
       :src="tree"
       class="misc-footer-tree d-none d-md-block"

@@ -40,7 +40,7 @@ const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup) => 
 }
 
 /*
-  ℹ️ Close overlay side when route is changed
+  Close overlay side when route is changed
   Close overlay vertical nav when link is clicked
 */
 const route = useRoute()
@@ -71,7 +71,7 @@ const handleNavScroll = (evt: Event) => {
       },
     ]"
   >
-    <!-- 👉 Header -->
+    <!-- Header -->
     <div class="nav-header">
       <slot name="nav-header">
         <RouterLink
@@ -91,7 +91,7 @@ const handleNavScroll = (evt: Event) => {
             </h1>
           </Transition>
         </RouterLink>
-        <!-- 👉 Vertical nav actions -->
+        <!-- Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
         <!--
           <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
@@ -150,7 +150,7 @@ const handleNavScroll = (evt: Event) => {
 @use "@configured-variables" as variables;
 @use "@layouts/styles/mixins";
 
-// 👉 Vertical Nav
+// Vertical Nav
 .layout-vertical-nav {
   position: fixed;
   z-index: variables.$layout-vertical-nav-z-index;
@@ -179,10 +179,10 @@ const handleNavScroll = (evt: Event) => {
   .nav-items {
     block-size: 100%;
 
-    // ℹ️ We no loner needs this overflow styles as perfect scrollbar applies it
+    // We no loner needs this overflow styles as perfect scrollbar applies it
     // overflow-x: hidden;
 
-    // // ℹ️ We used `overflow-y` instead of `overflow` to mitigate overflow x. Revert back if any issue found.
+    // // We used `overflow-y` instead of `overflow` to mitigate overflow x. Revert back if any issue found.
     // overflow-y: auto;
   }
 
@@ -193,14 +193,14 @@ const handleNavScroll = (evt: Event) => {
     white-space: nowrap;
   }
 
-  // 👉 Collapsed
+  // Collapsed
   .layout-vertical-nav-collapsed & {
     &:not(.hovered) {
       inline-size: variables.$layout-vertical-nav-collapsed-width;
     }
   }
 
-  // 👉 Overlay nav
+  // Overlay nav
   &.overlay-nav {
     &:not(.visible) {
       transform: translateX(-#{variables.$layout-vertical-nav-width});

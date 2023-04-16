@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import type { Invoice } from '@/@fake-db/types';
 
-// import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
-
-// 👉 Store
-// const invoiceListStore = useInvoiceStore()
-
 const searchQuery = ref('')
 const selectedStatus = ref('')
 const rowPerPage = ref(10)
@@ -15,7 +10,7 @@ const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
 const selectedRows = ref<string[]>([])
 
-// 👉 Fetch Invoices
+// Fetch Invoices
 watchEffect(() => {
   // invoiceListStore.fetchInvoices(
   //   {
@@ -33,13 +28,13 @@ watchEffect(() => {
   // })
 })
 
-// 👉 watching current page
+// watching current page
 watchEffect(() => {
   if (currentPage.value > totalPage.value)
     currentPage.value = totalPage.value
 })
 
-// 👉 Computing pagination data
+// Computing pagination data
 const paginationData = computed(() => {
   const firstIndex = invoices.value.length ? ((currentPage.value - 1) * rowPerPage.value) + 1 : 0
   const lastIndex = invoices.value.length + ((currentPage.value - 1) * rowPerPage.value)
@@ -47,7 +42,7 @@ const paginationData = computed(() => {
   return `${firstIndex}-${lastIndex} of ${totalInvoices.value}`
 })
 
-// 👉 Invoice status variant resolver
+// Invoice status variant resolver
 const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   if (status === 'Partial Payment')
     return { variant: 'warning', icon: 'mdi-chart-timeline-variant' }
@@ -94,9 +89,8 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
 
     <VDivider />
 
-    <!-- SECTION Table -->
     <VTable class="text-no-wrap invoice-list-table">
-      <!-- 👉 Table head -->
+      <!-- Table head -->
       <thead>
         <tr>
           <th scope="col">
@@ -123,20 +117,20 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         </tr>
       </thead>
 
-      <!-- 👉 Table Body -->
+      <!-- Table Body -->
       <tbody>
         <tr
           v-for="invoice in invoices"
           :key="invoice.id"
         >
-          <!-- 👉 Id -->
+          <!-- Id -->
           <td>
             <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
               #{{ invoice.id }}
             </RouterLink>
           </td>
 
-          <!-- 👉 Trending -->
+          <!-- Trending -->
           <td>
             <VTooltip>
               <template #activator="{ props }">
@@ -164,17 +158,17 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
             </VTooltip>
           </td>
 
-          <!-- 👉 total -->
+          <!-- total -->
           <td class="text-center text-medium-emphasis">
             ${{ invoice.total }}
           </td>
 
-          <!-- 👉 Date -->
+          <!-- Date -->
           <td class="text-center text-medium-emphasis">
             {{ invoice.issuedDate }}
           </td>
 
-          <!-- 👉 Actions -->
+          <!-- Actions -->
           <td style="width: 7.5rem;">
             <VBtn
               icon
@@ -254,7 +248,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         </tr>
       </tbody>
 
-      <!-- 👉 table footer  -->
+      <!-- table footer  -->
       <tfoot v-show="!invoices.length">
         <tr>
           <td
@@ -266,13 +260,11 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         </tr>
       </tfoot>
     </VTable>
-    <!-- !SECTION -->
 
     <VDivider />
 
-    <!-- SECTION Pagination -->
     <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
-      <!-- 👉 Rows per page -->
+      <!-- Rows per page -->
       <div
         class="d-flex align-center ms-3"
         style="width: 171px;"
@@ -287,7 +279,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         />
       </div>
 
-      <!-- 👉 Pagination and pagination meta -->
+      <!-- Pagination and pagination meta -->
       <div class="d-flex align-center">
         <span>{{ paginationData }}</span>
 
@@ -301,7 +293,6 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         />
       </div>
     </VCardText>
-  <!-- !SECTION -->
   </VCard>
 </template>
 

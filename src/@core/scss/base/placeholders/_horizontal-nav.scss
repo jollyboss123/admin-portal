@@ -69,7 +69,7 @@
   margin-inline-end: 0.75rem;
 
   /*
-    ℹ️ `margin-inline` will be (normal icon font-size - small icon font-size) / 2
+    `margin-inline` will be (normal icon font-size - small icon font-size) / 2
     (1.5rem - 0.9rem) / 2 => 0.6rem / 2 => 0.3rem
   */
   margin-inline-start: calc((variables.$horizontal-nav-items-icon-size - variables.$horizontal-nav-third-level-icon-size) / 2);

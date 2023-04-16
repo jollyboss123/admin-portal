@@ -10,7 +10,7 @@ const props = defineProps<Props>()
 
 <template>
   <div class="text-center mb-4">
-    <!-- 👉 Title and subtitle -->
+    <!-- Title and subtitle -->
     <h1 class="text-h1">
       {{ props.errorCode }}
     </h1>

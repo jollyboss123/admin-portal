@@ -1,9 +1,9 @@
 @use "@configured-variables" as variables;
 
-// ℹ️ Add divider around section title
+// Add divider around section title
 %vertical-nav-section-title {
   /*
-    ℹ️ We will use this to add gap between divider and text.
+    We will use this to add gap between divider and text.
     Moreover, we will use this to adjust the `flex-basis` property of left divider
   */
   $divider-gap: 0.625rem;
@@ -32,7 +32,7 @@
     }
   }
 
-  // ℹ️ Update the margin-inline-end when vertical nav is in mini state. We done same for link & group.
+  // Update the margin-inline-end when vertical nav is in mini state. We done same for link & group.
   @at-root {
     .layout-nav-type-vertical.layout-vertical-nav-collapsed .layout-vertical-nav:not(.hovered) .nav-section-title {
       margin-inline: 4px 0;
@@ -50,7 +50,7 @@
 }
 
 %vertical-nav-item-interactive {
-  // ℹ️ Wobble effect
+  // Wobble effect
   // transition: margin-inline 0.4s ease-in-out;
   // will-change: margin-inline;
 

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import avatar1 from '@images/avatars/avatar-1.png'
+import avatar1 from '@images/avatars/avatar-1.png';
 
 const accountData = {
   avatarImg: avatar1,
@@ -111,7 +111,7 @@ const currencies = [
     <VCol cols="12">
       <VCard>
         <VCardText class="d-flex">
-          <!-- 👉 Avatar -->
+          <!-- Avatar -->
           <VAvatar
             rounded="sm"
             size="100"
@@ -119,7 +119,7 @@ const currencies = [
             :image="accountDataLocal.avatarImg"
           />
 
-          <!-- 👉 Upload Photo -->
+          <!-- Upload Photo -->
           <form
             ref="refForm"
             class="d-flex flex-column justify-center gap-3"
@@ -166,10 +166,10 @@ const currencies = [
         </VCardText>
 
         <VCardText>
-          <!-- 👉 Form -->
+          <!-- Form -->
           <VForm class="mt-6">
             <VRow>
-              <!-- 👉 First Name -->
+              <!-- First Name -->
               <VCol
                 md="6"
                 cols="12"
@@ -180,7 +180,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Last Name -->
+              <!-- Last Name -->
               <VCol
                 md="6"
                 cols="12"
@@ -191,7 +191,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Email -->
+              <!-- Email -->
               <VCol
                 cols="12"
                 md="6"
@@ -203,7 +203,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Organization -->
+              <!-- Organization -->
               <VCol
                 cols="12"
                 md="6"
@@ -214,7 +214,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Phone -->
+              <!-- Phone -->
               <VCol
                 cols="12"
                 md="6"
@@ -225,7 +225,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Address -->
+              <!-- Address -->
               <VCol
                 cols="12"
                 md="6"
@@ -236,7 +236,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 State -->
+              <!-- State -->
               <VCol
                 cols="12"
                 md="6"
@@ -247,7 +247,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Zip Code -->
+              <!-- Zip Code -->
               <VCol
                 cols="12"
                 md="6"
@@ -258,7 +258,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Country -->
+              <!-- Country -->
               <VCol
                 cols="12"
                 md="6"
@@ -270,7 +270,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Language -->
+              <!-- Language -->
               <VCol
                 cols="12"
                 md="6"
@@ -282,7 +282,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Timezone -->
+              <!-- Timezone -->
               <VCol
                 cols="12"
                 md="6"
@@ -295,7 +295,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Currency -->
+              <!-- Currency -->
               <VCol
                 cols="12"
                 md="6"
@@ -308,7 +308,7 @@ const currencies = [
                 />
               </VCol>
 
-              <!-- 👉 Form Actions -->
+              <!-- Form Actions -->
               <VCol
                 cols="12"
                 class="d-flex flex-wrap gap-4"
@@ -331,10 +331,10 @@ const currencies = [
     </VCol>
 
     <VCol cols="12">
-      <!-- 👉 Delete Account -->
+      <!-- Delete Account -->
       <VCard title="Delete Account">
         <VCardText>
-          <!-- 👉 Checkbox and Button  -->
+          <!-- Checkbox and Button  -->
           <VCheckbox
             v-model="isAccountDeactivated"
             :rules="validateAccountDeactivation"

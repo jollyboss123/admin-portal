@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import chrome from '@images/logos/chrome.png'
+import chrome from '@images/logos/chrome.png';
 
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
@@ -41,7 +41,7 @@ const recentDevices = [
 <template>
   <VRow>
     <VCol cols="12">
-      <!-- 👉 Change password -->
+      <!-- Change password -->
       <VCard title="Change Password">
         <VCardText>
           <VAlert
@@ -90,7 +90,7 @@ const recentDevices = [
     </VCol>
 
     <VCol cols="12">
-      <!-- 👉 Two step verification -->
+      <!-- Two step verification -->
       <VCard
         title="Two-step verification"
         subtitle="Keep your account secure with authentication step."
@@ -144,7 +144,7 @@ const recentDevices = [
     </VCol>
 
     <VCol cols="12">
-      <!-- 👉 Recent devices -->
+      <!-- Recent devices -->
       <VCard title="Recent devices">
         <VDivider />
         <VTable class="text-no-wrap">
@@ -197,7 +197,7 @@ const recentDevices = [
     </VCol>
   </VRow>
 
-  <!-- 👉 Enable One Time Password Dialog -->
+  <!-- Enable One Time Password Dialog -->
   <EnableOneTimePasswordDialog
     v-model:isDialogVisible="isTwoFactorDialogOpen"
     :mobile-number="smsVerificationNumber"

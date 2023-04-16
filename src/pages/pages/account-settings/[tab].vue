@@ -2,11 +2,6 @@
 import AccountSettingsAccount from '@/views/pages/account-settings/AccountSettingsAccount.vue';
 import { useRoute } from 'vue-router';
 
-// import AccountSettingsBillingAndPlans from '@/views/pages/account-settings/AccountSettingsBillingAndPlans.vue'
-// import AccountSettingsConnections from '@/views/pages/account-settings/AccountSettingsConnections.vue'
-// import AccountSettingsNotification from '@/views/pages/account-settings/AccountSettingsNotification.vue'
-// import AccountSettingsSecurity from '@/views/pages/account-settings/AccountSettingsSecurity.vue'
-
 const route = useRoute()
 
 const activeTab = ref(route.params.tab)
@@ -51,34 +46,6 @@ const tabs = [
       <VWindowItem value="account">
         <AccountSettingsAccount />
       </VWindowItem>
-
-      <!-- Security -->
-      <!--
-        <VWindowItem value="security">
-        <AccountSettingsSecurity />
-        </VWindowItem>
-      -->
-
-      <!-- Billing -->
-      <!--
-        <VWindowItem value="billing-plans">
-        <AccountSettingsBillingAndPlans />
-        </VWindowItem>
-      -->
-
-      <!-- Notification -->
-      <!--
-        <VWindowItem value="notification">
-        <AccountSettingsNotification />
-        </VWindowItem>
-      -->
-
-      <!-- Connections -->
-      <!--
-        <VWindowItem value="connection">
-        <AccountSettingsConnections />
-        </VWindowItem>
-      -->
     </VWindow>
   </div>
 </template>

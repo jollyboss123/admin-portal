@@ -146,14 +146,6 @@ const onSubmit = () => {
                     v-model="rememberMe"
                     label="Remember me"
                   />
-                  <!--
-                    <RouterLink
-                    class="text-primary ms-2 mb-1"
-                    :to="{ name: 'forgot-password' }"
-                    >
-                    Forgot Password?
-                    </RouterLink>
-                  -->
                 </div>
 
                 <VBtn
@@ -162,6 +154,15 @@ const onSubmit = () => {
                 >
                   Login
                 </VBtn>
+              </VCol>
+
+              <VCol
+                cols="12"
+                class="d-flex align-center"
+              >
+                <VDivider />
+                <span class="mx-4">or</span>
+                <VDivider />
               </VCol>
 
               <!-- auth providers -->

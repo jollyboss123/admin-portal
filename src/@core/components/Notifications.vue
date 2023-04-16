@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Anchor } from 'vuetify/lib/components'
-import { avatarText } from '@core/utils/formatters'
-import type { Notification } from '@layouts/types'
+import { avatarText } from '@core/utils/formatters';
+import type { Notification } from '@layouts/types';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import type { Anchor } from 'vuetify/lib/components';
 
 interface Props {
   notifications: Notification[]
@@ -52,7 +52,7 @@ defineEmits<{
         offset="14px"
       >
         <VCard class="d-flex flex-column">
-          <!-- 👉 Header -->
+          <!-- Header -->
           <VCardItem class="notification-section">
             <VCardTitle class="text-base">
               Notifications
@@ -71,7 +71,7 @@ defineEmits<{
 
           <VDivider />
 
-          <!-- 👉 Notifications list -->
+          <!-- Notifications list -->
           <PerfectScrollbar :options="{ wheelPropagation: false }">
             <VList class="py-0">
               <template
@@ -110,7 +110,7 @@ defineEmits<{
             </VList>
           </PerfectScrollbar>
 
-          <!-- 👉 Footer -->
+          <!-- Footer -->
           <VCardText class="notification-section">
             <VBtn
               block

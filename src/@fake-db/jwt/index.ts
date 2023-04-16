@@ -1,11 +1,11 @@
-import avatar1 from '@images/avatars/avatar-1.png'
-import avatar2 from '@images/avatars/avatar-2.png'
 import mock from '@/@fake-db/mock'
 import type { User, UserOut } from '@/@fake-db/types.d'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
 
 // TODO: Use jsonwebtoken pkg
-// ℹ️ Created from https://jwt.io/ using HS256 algorithm
-// ℹ️ We didn't created it programmatically because jsonwebtoken package have issues with esm support. View Issues: https://github.com/auth0/node-jsonwebtoken/issues/655
+// Created from https://jwt.io/ using HS256 algorithm
+// We didn't created it programmatically because jsonwebtoken package have issues with esm support. View Issues: https://github.com/auth0/node-jsonwebtoken/issues/655
 const userTokens = [
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.fhc3wykrAnRpcKApKhXiahxaOe8PSHatad31NuIZ0Zg',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mn0.cat2xMrZLn0FwicdGtZNzL7ifDTAKWB0k1RurSWjdnw',
@@ -19,7 +19,7 @@ const userTokens = [
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTB9.txWLuN4QT5PqTtgHmlOiNerIu5Do51PpYOiZutkyXYg',
 ]
 
-// ❗ These two secrets shall be in .env file and not in any other file
+// These two secrets shall be in .env file and not in any other file
 // const jwtSecret = 'dd5f3089-40c3-403d-af14-d0c228b05cb4'
 
 const database: User[] = [

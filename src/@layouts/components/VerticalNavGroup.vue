@@ -21,13 +21,13 @@ const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
 const hideTitleAndBadge = isVerticalNavMini(windowWidth)
 
 /*
-  ℹ️ We provided default value `ref(false)` because inject will return `T | undefined`
+  We provided default value `ref(false)` because inject will return `T | undefined`
   Docs: https://vuejs.org/api/composition-api-dependency-injection.html#inject
 */
 const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered, ref(false))
 
 /*
-  ℹ️ We have to add watcher for `isVerticalNavCollapsed` to open & close the group when menu collapse state is changed
+  We have to add watcher for `isVerticalNavCollapsed` to open & close the group when menu collapse state is changed
   We can't rely on watcher for `isVerticalNavHovered` because nav menu can be collapsed via customizer (basically without entering mouse inside nav menu)
   Hence, watcher for `isVerticalNavHovered` won't get triggered and there will no change in open state of nav group when menu is collapsed via customizer.
 */
@@ -114,7 +114,7 @@ watch(isGroupOpen, (val: boolean) => {
   It will help in making vertical nav adapting the behavior of accordion.
   If we open multiple groups without navigating to any route we must close the inactive or temporarily opened groups.
 
-  😵‍💫 Gotchas:
+  Gotchas:
     * If we open inactive group then it will auto close that group because we close groups based on active state.
       Goal of this watcher is auto close groups which are not active when openGroups array is updated.
       So, we have to find a way to do not close recently opened inactive group.
@@ -140,34 +140,9 @@ watch(openGroups, val => {
   isGroupActive.value = isActive
 }, { deep: true })
 
-// ℹ️ Previously instead of below watcher we were using two individual watcher for `isVerticalNavHovered`, `isVerticalNavCollapsed` & `isLessThanOverlayNavBreakpoint`
 watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
   isGroupOpen.value = val ? false : isGroupActive.value
 })
-
-// watch(isVerticalNavHovered, val => {
-//   // If menu is not collapsed ignore
-//   if (!(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value)))
-//     return
-
-//   isGroupOpen.value = val ? isGroupActive.value : false
-// })
-
-/*
-  Update: We don't need this watcher any more because we have new watch isVerticalNavMini that includes this one
-  ℹ️ We need this watcher to
-    - Collapse the group when going to `lgAndUp` if vertical nav is collapsed (else block)
-    - Expand the group if it's active and screen is `mdAndDown`. Because in this screen vertical nav will be overlay nav
-*/
-// watch(() => isLessThanOverlayNavBreakpoint.value(windowWidth.value), isLessThanOverlayNavBreakpoint_ => {
-//   // If window size is more than overlay nav breakpoint => expand group if its active
-//   if (isLessThanOverlayNavBreakpoint_) { isGroupOpen.value = isGroupActive.value }
-
-//   else {
-//     if (isVerticalNavCollapsed.value)
-//       isGroupOpen.value = false
-//   }
-// })
 </script>
 
 <template>
@@ -192,7 +167,7 @@ watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
         class="nav-item-icon"
       />
       <TransitionGroup name="transition-slide-x">
-        <!-- 👉 Title -->
+        <!-- Title -->
         <Component
           :is=" config.app.enableI18n ? 'i18n-t' : 'span'"
           v-bind="dynamicI18nProps(item.title, 'span')"
@@ -203,7 +178,7 @@ watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
           {{ item.title }}
         </Component>
 
-        <!-- 👉 Badge -->
+        <!-- Badge -->
         <Component
           :is="config.app.enableI18n ? 'i18n-t' : 'span'"
           v-bind="dynamicI18nProps(item.badgeContent, 'span')"

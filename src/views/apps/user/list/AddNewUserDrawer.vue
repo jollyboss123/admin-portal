@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import type { VForm } from 'vuetify/components'
+import type { VForm } from 'vuetify/components';
 
-import type { UserProperties } from '@/@fake-db/types'
-import { emailValidator, requiredValidator } from '@validators'
+import type { UserProperties } from '@/@fake-db/types';
+import { emailValidator, requiredValidator } from '@validators';
 
 interface Emit {
   (e: 'update:isDrawerOpen', value: boolean): void
@@ -30,7 +30,7 @@ const role = ref()
 const plan = ref()
 const status = ref()
 
-// 👉 drawer close
+// drawer close
 const closeNavigationDrawer = () => {
   emit('update:isDrawerOpen', false)
 
@@ -79,7 +79,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
     :model-value="props.isDrawerOpen"
     @update:model-value="handleDrawerModelValueUpdate"
   >
-    <!-- 👉 Title -->
+    <!-- Title -->
     <div class="d-flex align-center bg-var-theme-background px-5 py-2">
       <h6 class="text-h6">
         Add User
@@ -99,14 +99,14 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>
-          <!-- 👉 Form -->
+          <!-- Form -->
           <VForm
             ref="refForm"
             v-model="isFormValid"
             @submit.prevent="onSubmit"
           >
             <VRow>
-              <!-- 👉 Full name -->
+              <!-- Full name -->
               <VCol cols="12">
                 <VTextField
                   v-model="fullName"
@@ -115,7 +115,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 Username -->
+              <!-- Username -->
               <VCol cols="12">
                 <VTextField
                   v-model="userName"
@@ -124,7 +124,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 Email -->
+              <!-- Email -->
               <VCol cols="12">
                 <VTextField
                   v-model="email"
@@ -133,7 +133,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 company -->
+              <!-- company -->
               <VCol cols="12">
                 <VTextField
                   v-model="company"
@@ -142,7 +142,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 Country -->
+              <!-- Country -->
               <VCol cols="12">
                 <VTextField
                   v-model="country"
@@ -151,7 +151,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 Contact -->
+              <!-- Contact -->
               <VCol cols="12">
                 <VTextField
                   v-model="contact"
@@ -161,7 +161,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 Role -->
+              <!-- Role -->
               <VCol cols="12">
                 <VSelect
                   v-model="role"
@@ -171,7 +171,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 Plan -->
+              <!-- Plan -->
               <VCol cols="12">
                 <VSelect
                   v-model="plan"
@@ -181,7 +181,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 Status -->
+              <!-- Status -->
               <VCol cols="12">
                 <VSelect
                   v-model="status"
@@ -191,7 +191,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 />
               </VCol>
 
-              <!-- 👉 Submit and Cancel -->
+              <!-- Submit and Cancel -->
               <VCol cols="12">
                 <VBtn
                   type="submit"

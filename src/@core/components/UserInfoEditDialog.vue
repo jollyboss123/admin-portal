@@ -71,13 +71,13 @@ const dialogVisibleUpdate = (val: boolean) => {
       </VCardItem>
 
       <VCardText>
-        <!-- 👉 Form -->
+        <!-- Form -->
         <VForm
           class="mt-6"
           @submit.prevent="onFormSubmit"
         >
           <VRow>
-            <!-- 👉 Full Name -->
+            <!-- Full Name -->
             <VCol
               cols="12"
               md="6"
@@ -88,7 +88,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Username -->
+            <!-- Username -->
             <VCol
               cols="12"
               md="6"
@@ -99,7 +99,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Billing Email -->
+            <!-- Billing Email -->
             <VCol
               cols="12"
               md="6"
@@ -110,7 +110,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Status -->
+            <!-- Status -->
             <VCol
               cols="12"
               md="6"
@@ -121,7 +121,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Tax Id -->
+            <!-- Tax Id -->
             <VCol
               cols="12"
               md="6"
@@ -132,7 +132,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Contact -->
+            <!-- Contact -->
             <VCol
               cols="12"
               md="6"
@@ -143,7 +143,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Language -->
+            <!-- Language -->
             <VCol
               cols="12"
               md="6"
@@ -155,7 +155,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Country -->
+            <!-- Country -->
             <VCol
               cols="12"
               md="6"
@@ -167,7 +167,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Switch -->
+            <!-- Switch -->
             <VCol cols="12">
               <VSwitch
                 v-model="isUseAsBillingAddress"
@@ -176,7 +176,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               />
             </VCol>
 
-            <!-- 👉 Submit and Cancel -->
+            <!-- Submit and Cancel -->
             <VCol
               cols="12"
               class="d-flex flex-wrap justify-center gap-4"

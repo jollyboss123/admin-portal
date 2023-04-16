@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { UserProperties } from '@/@fake-db/types'
-import { useUserListStore } from '@/views/apps/user/useUserListStore'
-import { avatarText } from '@core/utils/formatters'
+import type { UserProperties } from '@/@fake-db/types';
+import { useUserListStore } from '@/views/apps/user/useUserListStore';
+import { avatarText } from '@core/utils/formatters';
 
-// 👉 Store
+// Store
 const userListStore = useUserListStore()
 const searchQuery = ref('')
 const selectedRole = ref('')
@@ -15,7 +15,7 @@ const totalPage = ref(1)
 const totalUsers = ref(0)
 const users = ref<UserProperties[]>([])
 
-// 👉 Fetching users
+// Fetching users
 
 const fetchUsers = () => {
   userListStore.fetchUsers({
@@ -36,7 +36,7 @@ const fetchUsers = () => {
 
 watchEffect(fetchUsers)
 
-// 👉 watching current page
+// watching current page
 watchEffect(() => {
   if (currentPage.value > totalPage.value)
     currentPage.value = totalPage.value
@@ -68,17 +68,16 @@ const resolveUserStatusVariant = (stat: string) => {
   return 'primary'
 }
 
-// 👉 watching current page
+// watching current page
 watchEffect(() => {
   if (currentPage.value > totalPage.value)
     currentPage.value = totalPage.value
 })
 
-// SECTION Checkbox toggle
 const selectedRows = ref<string[]>([])
 const selectAllUser = ref(false)
 
-// 👉 watch if checkbox array is empty all select should be uncheck
+// watch if checkbox array is empty all select should be uncheck
 watch(selectedRows, () => {
   if (!selectedRows.value.length)
     selectAllUser.value = false
@@ -88,7 +87,7 @@ watch(selectedRows, () => {
 <template>
   <VCard>
     <VTable class="text-no-wrap">
-      <!-- 👉 table head -->
+      <!-- table head -->
       <thead>
         <tr>
           <th scope="col">
@@ -106,13 +105,13 @@ watch(selectedRows, () => {
         </tr>
       </thead>
 
-      <!-- 👉 table body -->
+      <!-- table body -->
       <tbody>
         <tr
           v-for="user in users"
           :key="user.id"
         >
-          <!-- 👉 User -->
+          <!-- User -->
           <td>
             <div class="d-flex align-center">
               <VAvatar
@@ -143,12 +142,12 @@ watch(selectedRows, () => {
             </div>
           </td>
 
-          <!-- 👉 Email -->
+          <!-- Email -->
           <td class="text-medium-emphasis">
             {{ user.email }}
           </td>
 
-          <!-- 👉 Role -->
+          <!-- Role -->
           <td>
             <VIcon
               :icon="resolveUserRoleVariant(user.role).icon"
@@ -159,7 +158,7 @@ watch(selectedRows, () => {
             <span class="text-capitalize text-medium-emphasis">{{ user.role }}</span>
           </td>
 
-          <!-- 👉 Status -->
+          <!-- Status -->
           <td>
             <VChip
               :color="resolveUserStatusVariant(user.status)"
@@ -172,7 +171,7 @@ watch(selectedRows, () => {
         </tr>
       </tbody>
 
-      <!-- 👉 table footer  -->
+      <!-- table footer  -->
       <tfoot v-show="!users.length">
         <tr>
           <td

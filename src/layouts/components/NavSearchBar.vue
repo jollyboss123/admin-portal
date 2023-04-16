@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { SearchHeader, SearchItem } from '@/@fake-db/types'
-import axios from '@axios'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import type { SearchHeader, SearchItem } from '@/@fake-db/types';
+import axios from '@axios';
+import { useThemeConfig } from '@core/composable/useThemeConfig';
 
 interface Suggestion {
   icon: string
@@ -19,10 +19,10 @@ defineOptions({
   inheritAttrs: false,
 })
 
-// 👉 Is App Search Bar Visible
+// Is App Search Bar Visible
 const isAppSearchBarVisible = ref(false)
 
-// 👉 Default suggestions
+// Default suggestions
 const suggestionGroups: SuggestionGroup[] = [
   {
     title: 'Popular Searches',
@@ -62,7 +62,7 @@ const suggestionGroups: SuggestionGroup[] = [
   },
 ]
 
-// 👉 No Data suggestion
+// No Data suggestion
 const noDataSuggestions: Suggestion[] = [
   {
     title: 'Analytics Dashboard',
@@ -85,7 +85,7 @@ const searchQuery = ref('')
 const searchResult = ref<(SearchItem | SearchHeader)[]>([])
 const router = useRouter()
 
-// 👉 fetch search result API
+// fetch search result API
 watchEffect(() => {
   axios.get('/app-bar/search', {
     params: {
@@ -96,7 +96,7 @@ watchEffect(() => {
   })
 })
 
-// 👉 redirect the selected page
+// redirect the selected page
 const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {
   router.push(selected.url)
 
@@ -113,7 +113,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
     v-bind="$attrs"
     @click="isAppSearchBarVisible = !isAppSearchBarVisible"
   >
-    <!-- 👉 Search Trigger button -->
+    <!-- Search Trigger button -->
     <VBtn
       icon
       variant="text"
@@ -135,7 +135,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
     </span>
   </div>
 
-  <!-- 👉 App Bar Search -->
+  <!-- App Bar Search -->
   <LazyAppBarSearch
     v-model:isDialogVisible="isAppSearchBarVisible"
     v-model:search-query="searchQuery"

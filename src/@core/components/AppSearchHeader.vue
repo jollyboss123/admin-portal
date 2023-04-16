@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import AppSearchHeaderBgDark from '@images/pages/app-search-header-bg-dark.png'
-import AppSearchHeaderBgLight from '@images/pages/app-search-header-bg-light.png'
+import AppSearchHeaderBgDark from '@images/pages/app-search-header-bg-dark.png';
+import AppSearchHeaderBgLight from '@images/pages/app-search-header-bg-light.png';
 
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant';
 
 interface Props {
   title?: string
@@ -20,7 +20,7 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
 </script>
 
 <template>
-  <!-- 👉 Search Banner  -->
+  <!-- Search Banner  -->
   <VCard
     flat
     class="text-center search-header"
@@ -32,7 +32,7 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
         {{ props.title }}
       </h5>
 
-      <!-- 👉 Search Input -->
+      <!-- Search Input -->
       <VTextField
         v-bind="$attrs"
         density="default"

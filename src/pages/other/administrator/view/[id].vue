@@ -7,7 +7,7 @@ import UserTabNotifications from '@/views/apps/user/view/UserTabNotifications.vu
 import UserTabOverview from '@/views/apps/user/view/UserTabOverview.vue'
 import UserTabSecurity from '@/views/apps/user/view/UserTabSecurity.vue'
 
-// 👉 Store
+// Store
 const userListStore = useUserListStore()
 
 const route = useRoute()

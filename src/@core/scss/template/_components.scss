@@ -2,7 +2,7 @@
 @use "@configured-variables" as variables;
 @use "mixins";
 
-// 👉 Avatar font-size
+// Avatar font-size
 .v-avatar {
   @include mixins.avatar-font-sizes($map: variables.$avatar-font-sizes);
 }
@@ -14,7 +14,7 @@
   }
 }
 
-// 👉 added box shadow
+// added box shadow
 .v-timeline-item {
   .v-timeline-divider__dot {
     .v-timeline-divider__inner-dot {
@@ -30,7 +30,7 @@
   }
 }
 
-// 👉 Timeline Outlined style
+// Timeline Outlined style
 .v-timeline-variant-outlined.v-timeline {
   .v-timeline-divider__dot {
     .v-timeline-divider__inner-dot {
@@ -47,7 +47,7 @@
   }
 }
 
-// 👉 Expansion panels
+// Expansion panels
 .v-expansion-panel-title,
 .v-expansion-panel-title--active,
 .v-expansion-panel-title:hover,
@@ -60,7 +60,7 @@
   }
 }
 
-// 👉 Set Elevation when panel open
+// Set Elevation when panel open
 
 .v-expansion-panels:not(.v-expansion-panels--variant-accordion) {
   .v-expansion-panel.v-expansion-panel--active {
@@ -70,7 +70,7 @@
   }
 }
 
-// 👉 Slider
+// Slider
 
 .v-slider.v-input--horizontal .v-slider-track__fill {
   block-size: var(--v-slider-track-size);
@@ -86,7 +86,7 @@
   }
 }
 
-// 👉 Table
+// Table
 .v-table--density-default > .v-table__wrapper > table > tbody > tr > td,
 .v-table--density-default > .v-table__wrapper > table > thead > tr > td,
 .v-table--density-default > .v-table__wrapper > table > tfoot > tr > td {

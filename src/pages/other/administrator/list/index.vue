@@ -4,7 +4,7 @@ import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue';
 import { useUserListStore } from '@/views/apps/user/useUserListStore';
 import { avatarText } from '@core/utils/formatters';
 
-// 👉 Store
+// Store
 const userListStore = useUserListStore()
 const searchQuery = ref('')
 const selectedRole = ref()
@@ -16,7 +16,7 @@ const totalPage = ref(1)
 const totalUsers = ref(0)
 const users = ref<UserProperties[]>([])
 
-// 👉 Fetching users
+// Fetching users
 
 const fetchUsers = () => {
   userListStore.fetchUsers({
@@ -37,13 +37,13 @@ const fetchUsers = () => {
 
 watchEffect(fetchUsers)
 
-// 👉 watching current page
+// watching current page
 watchEffect(() => {
   if (currentPage.value > totalPage.value)
     currentPage.value = totalPage.value
 })
 
-// 👉 search filters
+// search filters
 const roles = [
   { title: 'Admin', value: 'admin' },
   { title: 'Author', value: 'author' },
@@ -93,13 +93,13 @@ const resolveUserStatusVariant = (stat: string) => {
 
 const isAddNewUserDrawerVisible = ref(false)
 
-// 👉 watching current page
+// watching current page
 watchEffect(() => {
   if (currentPage.value > totalPage.value)
     currentPage.value = totalPage.value
 })
 
-// 👉 Computing pagination data
+// Computing pagination data
 const paginationData = computed(() => {
   const firstIndex = users.value.length ? ((currentPage.value - 1) * rowPerPage.value) + 1 : 0
   const lastIndex = users.value.length + ((currentPage.value - 1) * rowPerPage.value)
@@ -107,11 +107,10 @@ const paginationData = computed(() => {
   return `${firstIndex}-${lastIndex} of ${totalUsers.value}`
 })
 
-// SECTION Checkbox toggle
 const selectedRows = ref<string[]>([])
 const selectAllUser = ref(false)
 
-// 👉 add/remove all checkbox ids in array
+// add/remove all checkbox ids in array
 const selectUnselectAll = () => {
   selectAllUser.value = !selectAllUser.value
   if (selectAllUser.value) {
@@ -125,13 +124,13 @@ const selectUnselectAll = () => {
   }
 }
 
-// 👉 watch if checkbox array is empty all select should be uncheck
+// watch if checkbox array is empty all select should be uncheck
 watch(selectedRows, () => {
   if (!selectedRows.value.length)
     selectAllUser.value = false
 }, { deep: true })
 
-// 👉 add/remove individual checkbox from array
+// add/remove individual checkbox from array
 const addRemoveIndividualCheckbox = (checkID: string) => {
   if (selectedRows.value.includes(checkID)) {
     const index = selectedRows.value.indexOf(checkID)
@@ -144,9 +143,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
   }
 }
 
-// !SECTION checkbox toggle
-
-// 👉 Add new user
+// Add new user
 const addNewUser = (userData: UserProperties) => {
   userListStore.addUser(userData)
 
@@ -163,7 +160,7 @@ const addNewUser = (userData: UserProperties) => {
     >
       <VCardText>
         <VRow>
-          <!-- 👉 Select Role -->
+          <!-- Select Role -->
           <VCol
             cols="12"
             sm="4"
@@ -177,7 +174,7 @@ const addNewUser = (userData: UserProperties) => {
             />
           </VCol>
 
-          <!-- 👉 Select Plan -->
+          <!-- Select Plan -->
           <VCol
             cols="12"
             sm="4"
@@ -191,7 +188,7 @@ const addNewUser = (userData: UserProperties) => {
             />
           </VCol>
 
-          <!-- 👉 Select Status -->
+          <!-- Select Status -->
           <VCol
             cols="12"
             sm="4"
@@ -210,7 +207,7 @@ const addNewUser = (userData: UserProperties) => {
 
     <VCard>
       <VCardText class="d-flex flex-wrap gap-4">
-        <!-- 👉 Export button -->
+        <!-- Export button -->
         <VBtn
           variant="tonal"
           color="secondary"
@@ -222,7 +219,7 @@ const addNewUser = (userData: UserProperties) => {
         <VSpacer />
 
         <div class="app-user-search-filter d-flex align-center">
-          <!-- 👉 Search  -->
+          <!-- Search  -->
           <VTextField
             v-model="searchQuery"
             placeholder="Search User"
@@ -230,7 +227,7 @@ const addNewUser = (userData: UserProperties) => {
             class="me-3"
           />
 
-          <!-- 👉 Add user button -->
+          <!-- Add user button -->
           <VBtn @click="isAddNewUserDrawerVisible = true">
             Add User
           </VBtn>
@@ -240,7 +237,7 @@ const addNewUser = (userData: UserProperties) => {
       <VDivider />
 
       <VTable class="text-no-wrap">
-        <!-- 👉 table head -->
+        <!-- table head -->
         <thead>
           <tr>
             <th scope="col">
@@ -273,13 +270,13 @@ const addNewUser = (userData: UserProperties) => {
           </tr>
         </thead>
 
-        <!-- 👉 table body -->
+        <!-- table body -->
         <tbody>
           <tr
             v-for="user in users"
             :key="user.id"
           >
-            <!-- 👉 Checkbox -->
+            <!-- Checkbox -->
             <td>
               <div style="width: 1.875rem;">
                 <VCheckbox
@@ -290,7 +287,7 @@ const addNewUser = (userData: UserProperties) => {
               </div>
             </td>
 
-            <!-- 👉 User -->
+            <!-- User -->
             <td>
               <div class="d-flex align-center">
                 <VAvatar
@@ -320,7 +317,7 @@ const addNewUser = (userData: UserProperties) => {
               </div>
             </td>
 
-            <!-- 👉 Email -->
+            <!-- Email -->
             <td class="text-medium-emphasis">
               {{ user.email }}
             </td>
@@ -336,12 +333,12 @@ const addNewUser = (userData: UserProperties) => {
               <span class="text-capitalize text-medium-emphasis">{{ user.role }}</span>
             </td>
 
-            <!-- 👉 Plan -->
+            <!-- Plan -->
             <td class="text-capitalize">
               {{ user.currentPlan }}
             </td>
 
-            <!-- 👉 Status -->
+            <!-- Status -->
             <td>
               <VChip
                 :color="resolveUserStatusVariant(user.status)"
@@ -352,7 +349,7 @@ const addNewUser = (userData: UserProperties) => {
               </VChip>
             </td>
 
-            <!-- 👉 Actions -->
+            <!-- Actions -->
             <td
               class="text-center"
               style="width: 5rem;"
@@ -370,7 +367,7 @@ const addNewUser = (userData: UserProperties) => {
 
                 <VMenu activator="parent">
                   <VList>
-                    <VListItem :to="{ name: 'apps-user-view-id', params: { id: user.id } }">
+                    <VListItem :to="{ name: 'other-administrator-view-id', params: { id: user.id } }">
                       <template #prepend>
                         <VIcon
                           icon="mdi-eye-outline"
@@ -411,7 +408,7 @@ const addNewUser = (userData: UserProperties) => {
           </tr>
         </tbody>
 
-        <!-- 👉 table footer  -->
+        <!-- table footer  -->
         <tfoot v-show="!users.length">
           <tr>
             <td
@@ -459,7 +456,7 @@ const addNewUser = (userData: UserProperties) => {
       </VCardText>
     </VCard>
 
-    <!-- 👉 Add New User -->
+    <!-- Add New User -->
     <AddNewUserDrawer
       v-model:isDrawerOpen="isAddNewUserDrawerVisible"
       @user-data="addNewUser"
