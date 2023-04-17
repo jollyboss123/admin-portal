@@ -34,6 +34,23 @@ This template should help get you started developing with Vue 3 in Vite.
 9. [Navigation Menu](#navigation-menu)
    1. [Vertical Nav](#vertical-nav)
    2. [Vertical Nav Link](#vertical-nav-link)
+   3. [Vertical Nav Group](#vertical-nav-group)
+   4. [Vertical Nav Section Title](#vertical-nav-section-title)
+   5. [Badges](#badges)
+   6. [Disabling Nav Items](#disabling-nav-items)
+   7. [Fetching nav items from API](#fetching-nav-items-from-api)
+10. [Authentication](#authentication)
+    1. [Login](#login)
+    2. [Sending access token in API call](#sending-access-token-in-api-call)
+    3. [Logout](#logout)
+11. [Access Control](#access-control--acl-)
+    1. [Overview](#overview)
+    2. [Using ACL](#using-acl)
+    3. [Updating ability](#updating-ability)
+    4. [Route Protection](#route-protection)
+    5. [Show/Hide Navigation Items](#showhide-navigation-items)
+12. [Layout](#layout)
+    1. [Usage](#usage)
 
 ## Recommended IDE Setup
 
