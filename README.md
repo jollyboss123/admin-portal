@@ -510,7 +510,7 @@ import '@layouts/styles/index.scss'
 // get layout config from themeConfig
 import { layoutConfig } from '@themeConfig'
 
-// ℹ️ We generate layout config from our themeConfig so you don't have to write config twice
+// We generate layout config from our themeConfig so you don't have to write config twice
 export default createLayouts(layoutConfig)
 ```
 
