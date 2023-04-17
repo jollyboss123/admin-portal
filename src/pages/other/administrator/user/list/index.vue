@@ -17,7 +17,6 @@ const totalUsers = ref(0)
 const users = ref<UserProperties[]>([])
 
 // Fetching users
-
 const fetchUsers = () => {
   userListStore.fetchUsers({
     q: searchQuery.value,
