@@ -1,6 +1,6 @@
 import type { UserAbility } from '@/plugins/casl/AppAbility';
 
-// 👉 Help center
+// Help center
 export type HelpCenterSubcategoryArticlesType = {
   slug: string
   title: string
@@ -150,8 +150,7 @@ export type ProfileTab = {
   connections: ProfileConnections[]
 }
 
-// SECTION
-// 👉 JWT
+// JWT
 
 export interface User {
   id: number
@@ -182,9 +181,6 @@ export interface RegisterResponse {
   userAbilities: UserAbility[]
 }
 
-// !SECTION
-
-// SECTION
 // App: User
 export interface UserProperties {
   id: number
@@ -199,9 +195,8 @@ export interface UserProperties {
   status: string
   avatar: string
 }
-// !SECTION
 
-// SECTION App: Calendar
+// App: Calendar
 export interface CalendarEvent {
   id: string
   url: string
@@ -212,11 +207,10 @@ export interface CalendarEvent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   extendedProps: Record<string, any>
 }
-// !SECTION
 
-// SECTION App: Invoice
+// App: Invoice
 
-// 👉 Client
+// Client
 export interface Client {
   address: string
   company: string
@@ -226,7 +220,7 @@ export interface Client {
   name: string
 }
 
-// 👉 Invoice
+// Invoice
 export interface Invoice {
     id: number,
     issuedDate: string
@@ -239,7 +233,7 @@ export interface Invoice {
     dueDate: string
 }
 
-// 👉 PaymentDetails
+// PaymentDetails
 export interface PaymentDetails {
   totalDue: string
   bankName: string
@@ -248,9 +242,7 @@ export interface PaymentDetails {
   swiftCode: string,
 }
 
-// !SECTION App: Invoice
-
-// SECTION App: Email
+// App: Email
 
 export type EmailFolder = 'inbox' | 'sent' | 'draft' | 'spam'
 export type EmailFilter = EmailFolder | 'trashed' | 'starred'
@@ -274,28 +266,6 @@ export interface EmailAttachment {
   size: string
 }
 
-/*
-  - You can have draft mail in your inbox
-    - We can have flag isDraft for mail
-  - You can't move sent mail to inbox
-  - You can move sent mail to inbox
-
-  --- above are gmail notes
-
-  - We will provide inbox, spam & sent as folders
-    - You can't move any mail in sent folder. Sent mail can be deleted or retrieved back
-  - We will provide isDraft, isSpam, isTrash as flags
-  - draft is flag
-  - trash is flag
-  - spam email can be moved to inbox only
-  - We will provide isDeleted flag
-
-  === this is too confusing 😔
-
-  // this is final now 💯
-  folders => inbox, sent, draft, spam
-  flags: starred, trash
-*/
 export interface Email {
   id: number
   to: EmailTo[]
@@ -324,9 +294,7 @@ export interface FetchEmailsPayload {
   label?: EmailLabel
 }
 
-// !SECTION Apps: Email
-
-// SECTION App: Chat
+// App: Chat
 export type ChatStatus = 'online' | 'offline' | 'busy' | 'away'
 
 export interface ChatContact {
@@ -356,7 +324,7 @@ export interface Chat {
   messages: ChatMessage[]
 }
 
-// ℹ️ This is chat type received in response of user chat
+// This is chat type received in response of user chat
 export interface ChatOut {
   id: Chat['id']
   unseenMsgs: Chat['unseenMsgs']
@@ -367,10 +335,8 @@ export interface ChatOut {
 export interface ChatContactWithChat extends ChatContact {
   chat: ChatOut
 }
-// !SECTION App: Chat
 
-
-// 👉 Template Search
+// Template Search
 //----------------
 export type SearchItem = {
   id: number

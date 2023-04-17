@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import americanExpress from '@images/icons/payments/american-express.png'
-import mastercard from '@images/icons/payments/mastercard.png'
-import visa from '@images/icons/payments/visa.png'
+import americanExpress from '@images/icons/payments/american-express.png';
+import mastercard from '@images/icons/payments/mastercard.png';
+import visa from '@images/icons/payments/visa.png';
 
 interface CardDetail {
   name: string
@@ -71,7 +71,7 @@ const currentBillingAddress = {
 
 <template>
   <VRow>
-    <!-- 👉 Current Plan -->
+    <!-- Current Plan -->
     <VCol cols="12">
       <VCard title="Current Plan">
         <VCardText>
@@ -109,7 +109,7 @@ const currentBillingAddress = {
               cols="12"
               md="6"
             >
-              <!-- 👉 Alert -->
+              <!-- Alert -->
               <VAlert
                 color="warning"
                 variant="tonal"
@@ -118,7 +118,7 @@ const currentBillingAddress = {
                 <span>Your plan requires update</span>
               </VAlert>
 
-              <!-- 👉 Progress -->
+              <!-- Progress -->
               <div class="d-flex justify-space-between mt-8 mb-2">
                 <h6 class="text-sm font-weight-medium">
                   Days
@@ -158,7 +158,7 @@ const currentBillingAddress = {
       </VCard>
     </VCol>
 
-    <!-- 👉 Payment Methods -->
+    <!-- Payment Methods -->
     <VCol cols="12">
       <VCard title="Payment Methods">
         <template #append>
@@ -225,7 +225,7 @@ const currentBillingAddress = {
     </VCol>
 
     <VCol cols="12">
-      <!-- 👉 Billing Address -->
+      <!-- Billing Address -->
       <VCard title="Billing Address">
         <template #append>
           <VBtn @click="isEditAddressDialogVisible = !isEditAddressDialogVisible">
@@ -364,27 +364,24 @@ const currentBillingAddress = {
     </VCol>
   </VRow>
 
-  <!-- 👉 Edit Card Dialog -->
+  <!-- Edit Card Dialog -->
   <CardAddEditDialog
     v-model:isDialogVisible="isCardEditDialogVisible"
     :card-details="currentCardDetails"
     class="v-dialog-lg"
   />
 
-  <!-- 👉 Add Card Dialog -->
+  <!-- Add Card Dialog -->
   <CardAddEditDialog
     v-model:isDialogVisible="isCardAddDialogVisible"
     class="v-dialog-lg"
   />
 
-  <!-- 👉 Edit Address dialog -->
+  <!-- Edit Address dialog -->
   <EditAddressDialog
     v-model:isDialogVisible="isEditAddressDialogVisible"
     :billing-address="currentBillingAddress"
   />
-
-  <!-- 👉 Upgrade plan dialog -->
-  <UserUpgradePlanDialog v-model:isDialogVisible="isUpgradePlanDialogVisible" />
 </template>
 
 <style lang="scss">

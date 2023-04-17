@@ -1,6 +1,6 @@
 // @use "@styles/variables/_vuetify.scss";
 
-// ℹ️ This mixin is inspired from vuetify for adding hover styles via before pseudo element
+// This mixin is inspired from vuetify for adding hover styles via before pseudo element
 @mixin before-pseudo() {
   position: relative;
 
@@ -25,7 +25,7 @@
   }
 }
 
-// ℹ️ Inspired from vuetify's active-states mixin
+// Inspired from vuetify's active-states mixin
 // focus => 0.12 & selected => 0.08
 @mixin selected-states($selector) {
   // #{$selector} {

@@ -1,6 +1,6 @@
 {
-  "name": "materio-vuejs-admin-template",
-  "version": "2.1.1",
+  "name": "jolly-vuejs-admin-template",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "npm run build:icons && vite --host",

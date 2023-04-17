@@ -11,8 +11,8 @@ $header: ".layout-navbar";
 }
 
 .layout-wrapper.layout-nav-type-vertical {
-  // SECTION  Layout Navbar
-  // 👉 Elevated navbar
+  // Layout Navbar
+  // Elevated navbar
   @if variables.$vertical-nav-navbar-style == "elevated" {
     // Add transition
     #{$header} {
@@ -28,7 +28,7 @@ $header: ".layout-navbar";
 
     // Scrolled styles for sticky navbar
     @at-root {
-      /* ℹ️ This html selector with not selector is required when:
+      /* This html selector with not selector is required when:
         dialog is opened and window don't have any scroll. This removes window-scrolled class from layout and out style broke
     */
       html.v-overlay-scroll-blocked:not([style*="--v-body-scroll-y:0px;"]) .layout-navbar-sticky,
@@ -46,9 +46,9 @@ $header: ".layout-navbar";
     }
   }
 
-  // 👉 Floating navbar
+  // Floating navbar
   @else if  variables.$vertical-nav-navbar-style == "floating" {
-    // ℹ️ Regardless of navbar is contained or not => Apply overlay to .layout-navbar
+    // Regardless of navbar is contained or not => Apply overlay to .layout-navbar
     .layout-navbar {
       &.navbar-blur {
         @extend %default-layout-vertical-nav-floating-navbar-overlay;
@@ -76,9 +76,7 @@ $header: ".layout-navbar";
     }
   }
 
-  // !SECTION
-
-  // 👉 Layout footer
+  // Layout footer
   .layout-footer {
     $ele-layout-footer: &;
 
@@ -87,7 +85,7 @@ $header: ".layout-navbar";
 
       // Sticky footer
       @at-root {
-        // ℹ️ .layout-footer-sticky#{$ele-layout-footer} => .layout-footer-sticky.layout-wrapper.layout-nav-type-vertical .layout-footer
+        // .layout-footer-sticky#{$ele-layout-footer} => .layout-footer-sticky.layout-wrapper.layout-nav-type-vertical .layout-footer
         .layout-footer-sticky#{$ele-layout-footer} {
           .footer-content-container {
             background-color: rgb(var(--v-theme-surface));

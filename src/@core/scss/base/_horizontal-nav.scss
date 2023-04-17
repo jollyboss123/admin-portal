@@ -8,15 +8,15 @@
 .layout-horizontal-nav {
   @extend %nav;
 
-  // 👉 Icon styles
+  // Icon styles
   .nav-item-icon {
     @extend %horizontal-nav-item-icon;
   }
 
-  // 👉 Common styles for nav group & nav link
+  // Common styles for nav group & nav link
   .nav-link,
   .nav-group {
-    // 👉 Disabled nav items
+    // Disabled nav items
     &.disabled {
       opacity: var(--v-disabled-opacity);
       pointer-events: none;
@@ -28,7 +28,7 @@
     }
   }
 
-  // SECTION Nav Link
+  // Nav Link
   .nav-link {
     @extend %nav-link;
 
@@ -42,7 +42,7 @@
       @include vuetifyStates.states($active: false);
     }
 
-    // 👉 Top level nav link
+    // Top level nav link
     &:not(.sub-item) {
       a {
         @extend %horizontal-nav-top-level-item;
@@ -53,20 +53,18 @@
       }
     }
 
-    // 👉 Sub link
+    // Sub link
     &.sub-item {
       a {
         &.router-link-active {
-          // ℹ️ We will not use active styles from material here because we want to use primary color for active link
+          // We will not use active styles from material here because we want to use primary color for active link
           @extend %horizontal-nav-sub-nav-link-active;
         }
       }
     }
   }
 
-  // !SECTION
-
-  // SECTION Nav Group
+  // Nav Group
   .nav-group {
     .popper-triggerer {
       .nav-group-label {
@@ -82,13 +80,13 @@
       @include vuetifyStates.states($active: false);
     }
 
-    // 👉 Top level group
+    // Top level group
     &:not(.sub-item) {
       > .popper-triggerer {
         position: relative;
 
         /*
-          ℹ️ The Bridge
+          The Bridge
           This after pseudo will work as bridge when we have space between popper triggerer and popper content
           Initially it will have pointer events none for normal behavior and once the content is shown it will
             work as bridge by setting pointer events to `auto`
@@ -107,8 +105,8 @@
       // Enable the pseudo bridge when content is shown by setting pointer events to `auto`
       &.show-content > .popper-triggerer::after {
         /*
-          ℹ️ We have added `z-index: 2` because when there is horizontal nav item below the popper trigger (group)
-            without this style nav item below popper trigger (group) gets focus hence closes the popper content
+          We have added `z-index: 2` because when there is horizontal nav item below the popper trigger (group)
+          without this style nav item below popper trigger (group) gets focus hence closes the popper content
         */
         z-index: 2;
         pointer-events: auto;
@@ -125,12 +123,12 @@
       }
 
       > .popper-content {
-        // ℹ️ Add space between popper wrapper & content
+        // Add space between popper wrapper & content
         margin-block-start: variables.$horizontal-nav-popper-content-top !important;
       }
     }
 
-    // 👉 Sub group
+    // Sub group
     &.sub-item {
       &.active {
         @include mixins.selected-states("> .popper-triggerer > .nav-group-label::before");
@@ -148,7 +146,7 @@
       font-size: 1.375rem;
 
       /*
-        ℹ️ ml-auto won't matter in top level group (because we haven't specified fixed width for top level groups)
+        ml-auto won't matter in top level group (because we haven't specified fixed width for top level groups)
         but we wrote generally because we don't want to become so specific
       */
       margin-inline-start: auto;
@@ -184,6 +182,4 @@
       @extend %horizontal-nav-popper-content-visible;
     }
   }
-
-  // !SECTION
 }

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { computePosition, flip, shift } from '@floating-ui/dom'
-import { useLayouts } from '@layouts/composable/useLayouts'
-import { config } from '@layouts/config'
-import { themeConfig } from '@themeConfig'
+import { computePosition, flip, shift } from '@floating-ui/dom';
+import { useLayouts } from '@layouts/composable/useLayouts';
+import { config } from '@layouts/config';
+import { themeConfig } from '@themeConfig';
 
 interface Props {
   popperInlineEnd?: boolean
@@ -37,7 +37,7 @@ const updatePopper = async () => {
     ],
 
     /*
-      ℹ️ Why we are not using fixed positioning?
+      Why we are not using fixed positioning?
 
       `position: fixed` doesn't work as expected when some CSS properties like `transform` is applied on its parent element.
       Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/position#values <= See `fixed` value description
@@ -57,7 +57,7 @@ const updatePopper = async () => {
 }
 
 /*
- 💡 Only add scroll event listener for updating position once horizontal nav is made static.
+  Only add scroll event listener for updating position once horizontal nav is made static.
   We don't want to update position every time user scrolls when horizontal nav is sticky
 */
 until(config.horizontalNav.type)
@@ -80,7 +80,7 @@ onMounted(updatePopper)
 // Recalculate position when direction changes
 const { isAppRtl, appContentWidth } = useLayouts()
 
-// ℹ️ Recalculate popper position when it's triggerer changes its position
+// Recalculate popper position when it's triggerer changes its position
 watch([isAppRtl, appContentWidth], updatePopper)
 
 // Watch for route changes and close popper content if route is changed
@@ -106,8 +106,7 @@ watch(() => route.fullPath, hideContent)
       <slot />
     </div>
 
-    <!-- SECTION Popper Content -->
-    <!-- 👉 Without transition -->
+    <!-- Without transition -->
     <template v-if="!themeConfig.horizontalNav.transition">
       <div
         ref="refPopper"
@@ -122,7 +121,7 @@ watch(() => route.fullPath, hideContent)
       </div>
     </template>
 
-    <!-- 👉 CSS Transition -->
+    <!-- CSS Transition -->
     <template v-else-if="typeof themeConfig.horizontalNav.transition === 'string'">
       <Transition :name="themeConfig.horizontalNav.transition">
         <div
@@ -140,7 +139,7 @@ watch(() => route.fullPath, hideContent)
       </Transition>
     </template>
 
-    <!-- 👉 Transition Component -->
+    <!-- Transition Component -->
     <template v-else>
       <Component :is="themeConfig.horizontalNav.transition">
         <div
@@ -157,7 +156,6 @@ watch(() => route.fullPath, hideContent)
         </div>
       </Component>
     </template>
-    <!-- !SECTION -->
   </div>
 </template>
 

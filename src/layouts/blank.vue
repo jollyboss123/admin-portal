@@ -6,7 +6,7 @@ export default defineComponent({
     const routerView = resolveComponent('router-view')
     const { injectSkinClasses } = useSkins()
 
-    // ℹ️ This will inject classes in body tag for accurate styling
+    // This will inject classes in body tag for accurate styling
     injectSkinClasses()
 
     return () => h('div', { class: 'layout-wrapper layout-blank' }, h(routerView))

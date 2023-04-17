@@ -21,7 +21,7 @@ const { width: windowWidth } = useWindowSize()
   <VerticalNavLayout
     :nav-items="navItems"
   >
-    <!-- 👉 navbar -->
+    <!-- navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">
       <div class="d-flex h-100 align-center">
         <VBtn
@@ -50,7 +50,7 @@ const { width: windowWidth } = useWindowSize()
       </div>
     </template>
 
-    <!-- 👉 Pages -->
+    <!-- Pages -->
     <RouterView v-slot="{ Component }">
       <Transition
         :name="appRouteTransition"
@@ -60,7 +60,7 @@ const { width: windowWidth } = useWindowSize()
       </Transition>
     </RouterView>
 
-    <!-- 👉 Footer -->
+    <!-- Footer -->
     <template #footer>
       <Footer />
     </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { VList, VListItem, VListSubheader } from 'vuetify/components'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import { VList, VListItem, VListSubheader } from 'vuetify/components';
 
 interface Emit {
   (e: 'update:isDialogVisible', value: boolean): void
@@ -30,7 +30,7 @@ interface Props {
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-// 👉 Hotkey
+// Hotkey
 const { ctrl_k, meta_k } = useMagicKeys()
 
 const refSearchList = ref<VList>()
@@ -39,20 +39,20 @@ const refSearchInput = ref<HTMLInputElement>()
 const isLocalDialogVisible = ref(structuredClone(toRaw(props.isDialogVisible)))
 const searchResults = ref(structuredClone(toRaw(props.searchResults)))
 
-// 👉 Watching props change
+// Watching props change
 watch(props, () => {
   isLocalDialogVisible.value = structuredClone(toRaw(props.isDialogVisible))
   searchResults.value = structuredClone(toRaw(props.searchResults))
   searchQuery.value = structuredClone(toRaw(props.searchQuery))
 })
 
-// 👉 watching control + / to open dialog
+// watching control + / to open dialog
 watch([ctrl_k, meta_k], () => {
   isLocalDialogVisible.value = true
   emit('update:isDialogVisible', true)
 })
 
-// 👉 clear search result and close the dialog
+// clear search result and close the dialog
 const clearSearchAndCloseDialog = () => {
   emit('update:isDialogVisible', false)
   emit('update:searchQuery', '')
@@ -63,7 +63,7 @@ watchEffect(() => {
     searchResults.value = []
 })
 
-// 👉 get fucus on search list
+// get focus on search list
 const getFocusOnSearchList = (e: KeyboardEvent) => {
   if (e.key === 'ArrowDown') {
     e.preventDefault()
@@ -80,22 +80,13 @@ const dialogModelValueUpdate = (val: boolean) => {
   emit('update:searchQuery', '')
 }
 
-// 👉 resolve categories name
+// resolve categories name
 const resolveCategories = (val: string) => {
   if (val === 'dashboards')
     return 'Dashboards'
 
   if (val === 'appsPages')
     return 'Apps & Pages'
-
-  if (val === 'userInterface')
-    return 'User Interface'
-
-  if (val === 'formsTables')
-    return 'Forms Tables'
-
-  if (val === 'chartsMisc')
-    return 'Charts Misc'
 
   return 'Misc'
 }
@@ -120,7 +111,7 @@ const resolveCategories = (val: string) => {
         class="pt-1 px-6"
         style="max-height: 65px;"
       >
-        <!-- 👉 Search Input -->
+        <!-- Search Input -->
         <VTextField
           ref="refSearchInput"
           v-model="searchQuery"
@@ -131,7 +122,7 @@ const resolveCategories = (val: string) => {
           @keydown="getFocusOnSearchList"
           @update:model-value="$emit('update:searchQuery', searchQuery)"
         >
-          <!-- 👉 Prepend Inner -->
+          <!-- Prepend Inner -->
           <template #prepend-inner>
             <VBtn
               icon
@@ -147,7 +138,7 @@ const resolveCategories = (val: string) => {
             </VBtn>
           </template>
 
-          <!-- 👉 Append Inner -->
+          <!-- Append Inner -->
           <template #append-inner>
             <div class="d-flex align-center">
               <div
@@ -174,22 +165,22 @@ const resolveCategories = (val: string) => {
         </VTextField>
       </VCardText>
 
-      <!-- 👉 Divider -->
+      <!-- Divider -->
       <VDivider />
 
-      <!-- 👉 Perfect Scrollbar -->
+      <!-- Perfect Scrollbar -->
       <PerfectScrollbar
         :options="{ wheelPropagation: false, suppressScrollX: true }"
         class="h-100"
       >
-        <!-- 👉 Search List -->
+        <!-- Search List -->
         <VList
           v-show="searchQuery.length && !!searchResults.length"
           ref="refSearchList"
           density="compact"
           class="app-bar-search-list"
         >
-          <!-- 👉 list Item /List Sub header -->
+          <!-- list Item /List Sub header -->
           <template
             v-for="item in searchResults"
             :key="item.title"
@@ -235,7 +226,7 @@ const resolveCategories = (val: string) => {
           </template>
         </VList>
 
-        <!-- 👉 Suggestions -->
+        <!-- Suggestions -->
         <div
           v-show="!!searchResults && !searchQuery"
           class="h-100"
@@ -281,7 +272,7 @@ const resolveCategories = (val: string) => {
           </slot>
         </div>
 
-        <!-- 👉 No Data found -->
+        <!-- No Data found -->
         <div
           v-show="!searchResults.length && searchQuery.length"
           class="h-100"

@@ -45,7 +45,7 @@ const onFormSubmit = () => {
       v-if="props.billingAddress"
       class="pa-sm-9 pa-5"
     >
-      <!-- 👉 Title -->
+      <!-- Title -->
       <VCardItem>
         <VCardTitle class="text-h5 text-center">
           Edit Address
@@ -53,15 +53,15 @@ const onFormSubmit = () => {
       </VCardItem>
 
       <VCardText>
-        <!-- 👉 Subtitle -->
+        <!-- Subtitle -->
         <VCardSubtitle class="text-center mb-6">
           Edit Address for future billing
         </VCardSubtitle>
 
-        <!-- 👉 Form -->
+        <!-- Form -->
         <VForm @submit.prevent="onFormSubmit">
           <VRow>
-            <!-- 👉 Company Name -->
+            <!-- Company Name -->
             <VCol
               cols="12"
               md="6"
@@ -72,7 +72,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 Email -->
+            <!-- Email -->
             <VCol
               cols="12"
               md="6"
@@ -83,7 +83,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 Tax ID -->
+            <!-- Tax ID -->
             <VCol
               cols="12"
               md="6"
@@ -94,7 +94,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 VAT Number -->
+            <!-- VAT Number -->
             <VCol
               cols="12"
               md="6"
@@ -105,7 +105,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 Billing Address -->
+            <!-- Billing Address -->
             <VCol cols="12">
               <VTextarea
                 v-model="billingAddress.address"
@@ -114,7 +114,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 Contact -->
+            <!-- Contact -->
             <VCol
               cols="12"
               md="6"
@@ -125,7 +125,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 Country -->
+            <!-- Country -->
             <VCol
               cols="12"
               md="6"
@@ -137,7 +137,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 State -->
+            <!-- State -->
             <VCol
               cols="12"
               md="6"
@@ -148,7 +148,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 Zip Code -->
+            <!-- Zip Code -->
             <VCol
               cols="12"
               md="6"
@@ -159,7 +159,7 @@ const onFormSubmit = () => {
               />
             </VCol>
 
-            <!-- 👉 Submit and Cancel button -->
+            <!-- Submit and Cancel button -->
             <VCol
               cols="12"
               class="d-flex flex-wrap justify-center gap-4"

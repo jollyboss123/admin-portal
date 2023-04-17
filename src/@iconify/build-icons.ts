@@ -107,7 +107,6 @@ const sources: BundleScriptConfig = {
 }
 
 // Iconify component (this changes import statement in generated file)
-// Available options: '@iconify/react' for React, '@iconify/vue' for Vue 3, '@iconify/vue2' for Vue 2, '@iconify/svelte' for Svelte
 const component = '@iconify/vue'
 
 // Set to true to use require() instead of import

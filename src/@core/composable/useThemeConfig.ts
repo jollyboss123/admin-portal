@@ -32,7 +32,7 @@ export const useThemeConfig = () => {
   }
 
   /*
-    ℹ️ Set current theme's surface color in localStorage
+    Set current theme's surface color in localStorage
 
     Why? Because when initial loader is shown (before vue is ready) we need to what's the current theme's surface color.
     We will use color stored in localStorage to set the initial loader's background color.
@@ -43,7 +43,7 @@ export const useThemeConfig = () => {
     const vuetifyTheme = useTheme()
 
     watch(theme, val => {
-      // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
+      // We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
       localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.themes.value[val].colors.surface)
       localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, vuetifyTheme.themes.value[val].colors.primary)
     }, {
@@ -84,39 +84,6 @@ export const useThemeConfig = () => {
     isAppRtl,
     switchToVerticalNavOnLtOverlayNavBreakpoint,
   } = useLayouts()
-
-  // const syncRtlWithRtlLang = (rtlLangs: string[], rtlDefaultLocale: string, ltrDefaultLocale: string) => {
-  // const { locale } = useI18n({ useScope: 'global' })
-
-  // watch(isAppRtl, val => {
-  //   if (val)
-  //     locale.value = rtlDefaultLocale
-  //   else locale.value = ltrDefaultLocale
-  // })
-  // watch(locale, val => {
-  //   if (rtlLangs.includes(val))
-  //     isAppRtl.value = true
-  //   else isAppRtl.value = false
-  // })
-
-  // watch(
-  //   [isAppRtl, locale],
-  //   ([valIsAppRTL, valLocale], [oldValIsAppRtl, oldValLocale]) => {
-  //     const isRtlUpdated = valIsAppRTL !== oldValIsAppRtl
-
-  //     if (isRtlUpdated) {
-  //       if (valIsAppRTL)
-  //         locale.value = rtlDefaultLocale
-  //       else locale.value = ltrDefaultLocale
-  //     }
-  //     else {
-  //       if (rtlLangs.includes(valLocale))
-  //         isAppRtl.value = true
-  //       else isAppRtl.value = false
-  //     }
-  //   },
-  // )
-  // }
 
   return {
     theme,

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { Anchor } from 'vuetify/lib/components'
-import { initialAbility } from '@/plugins/casl/ability'
-import { useAppAbility } from '@/plugins/casl/useAppAbility'
+import { initialAbility } from '@/plugins/casl/ability';
+import { useAppAbility } from '@/plugins/casl/useAppAbility';
+import type { Anchor } from 'vuetify/lib/components';
 
 const router = useRouter()
 const ability = useAppAbility()
@@ -17,7 +17,7 @@ const logout = () => {
   // Redirect to login page
   router.push('/login')
     .then(() => {
-      // ℹ️ We had to remove abilities in then block because if we don't nav menu items mutation is visible while redirecting user to login page
+      // We had to remove abilities in then block because if we don't nav menu items mutation is visible while redirecting user to login page
       // Remove "userAbilities" from localStorage
       localStorage.removeItem('userAbilities')
 
@@ -52,7 +52,6 @@ const avatarBadgeProps = {
         icon="mdi-account-outline"
       />
 
-      <!-- SECTION Menu -->
       <VMenu
         activator="parent"
         width="230"
@@ -60,7 +59,7 @@ const avatarBadgeProps = {
         offset="14px"
       >
         <VList>
-          <!-- 👉 User Avatar & Name -->
+          <!-- User Avatar & Name -->
           <VListItem>
             <template #prepend>
               <VListItemAction start>
@@ -93,8 +92,8 @@ const avatarBadgeProps = {
 
           <VDivider class="my-2" />
 
-          <!-- 👉 Profile -->
-          <VListItem :to="{ name: 'apps-user-view-id', params: { id: 21 } }">
+          <!-- Profile -->
+          <VListItem :to="{ name: 'other-administrator-user-view-id', params: { id: 21 } }">
             <template #prepend>
               <VIcon
                 class="me-2"
@@ -106,49 +105,7 @@ const avatarBadgeProps = {
             <VListItemTitle>Profile</VListItemTitle>
           </VListItem>
 
-          <!-- 👉 Settings -->
-          <VListItem :to="{ name: 'pages-account-settings-tab', params: { tab: 'account' } }">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="mdi-cog-outline"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Settings</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 Pricing -->
-          <VListItem :to="{ name: 'pages-pricing' }">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="mdi-currency-usd"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Pricing</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 FAQ -->
-          <VListItem :to="{ name: 'pages-faq' }">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="mdi-help-circle-outline"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>FAQ</VListItemTitle>
-          </VListItem>
-
-          <!-- Divider -->
-          <VDivider class="my-2" />
-
-          <!-- 👉 Logout -->
+          <!-- Logout -->
           <VListItem
             link
             @click="logout"
@@ -165,7 +122,6 @@ const avatarBadgeProps = {
           </VListItem>
         </VList>
       </VMenu>
-      <!-- !SECTION -->
     </VAvatar>
   </VBadge>
 </template>

@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import UserInvoiceTable from './UserInvoiceTable.vue'
-
-// Images
 import avatar2 from '@images/avatars/avatar-2.png'
 import figma from '@images/icons/project-icons/figma.png'
 import html5 from '@images/icons/project-icons/html5.png'
@@ -148,7 +145,7 @@ const resolveUserProgressVariant = (progress: number) => {
     </VCol>
 
     <VCol cols="12">
-      <!-- 👉 Activity timeline -->
+      <!-- Activity timeline -->
       <VCard title="User Activity Timeline">
         <VCardText>
           <VTimeline
@@ -245,10 +242,6 @@ const resolveUserProgressVariant = (progress: number) => {
           </VTimeline>
         </VCardText>
       </VCard>
-    </VCol>
-
-    <VCol cols="12">
-      <UserInvoiceTable />
     </VCol>
   </VRow>
 </template>

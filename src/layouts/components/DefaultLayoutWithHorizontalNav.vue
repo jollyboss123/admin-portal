@@ -20,7 +20,7 @@ const { appRouteTransition } = useThemeConfig()
   <HorizontalNavLayout
     :nav-items="navItems"
   >
-    <!-- 👉 navbar -->
+    <!-- navbar -->
     <template #navbar>
       <RouterLink
         to="/"
@@ -42,7 +42,7 @@ const { appRouteTransition } = useThemeConfig()
       <UserProfile />
     </template>
 
-    <!-- 👉 Pages -->
+    <!-- Pages -->
     <RouterView v-slot="{ Component, route }">
       <Transition
         :name="appRouteTransition"
@@ -55,7 +55,7 @@ const { appRouteTransition } = useThemeConfig()
       </Transition>
     </RouterView>
 
-    <!-- 👉 Footer -->
+    <!-- Footer -->
     <template #footer>
       <Footer />
     </template>

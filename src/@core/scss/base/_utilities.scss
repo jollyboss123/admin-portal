@@ -1,7 +1,7 @@
 @use "@configured-variables" as variables;
 @use "@layouts/styles/mixins" as layoutsMixins;
 
-// 👉 Demo spacers
+// Demo spacers
 // TODO: Use vuetify SCSS variable here
 $card-spacer-content: 16px;
 
@@ -27,27 +27,27 @@ $card-spacer-content: 16px;
   }
 }
 
-// 👉 Card match height
+// Card match height
 .match-height.v-row {
   .v-card {
     block-size: 100%;
   }
 }
 
-// 👉 Whitespace
+// Whitespace
 .whitespace-no-wrap {
   white-space: nowrap;
 }
 
-// 👉 Colors
+// Colors
 
 /*
-  ℹ️ Vuetify is applying `.text-white` class to badge icon but don't provide its styles
+  Vuetify is applying `.text-white` class to badge icon but don't provide its styles
   Moreover, we also use this class in some places
 
-  ℹ️ In vuetify 2 with `$color-pack: false` SCSS var config this class was getting generated but this is not the case in v3
+  In vuetify 2 with `$color-pack: false` SCSS var config this class was getting generated but this is not the case in v3
 
-  ℹ️ We also need !important to get correct color in badge icon
+  We also need !important to get correct color in badge icon
 */
 .text-white {
   color: #fff !important;
@@ -64,7 +64,7 @@ $card-spacer-content: 16px;
   }
 }
 
-// 👉 Typography
+// Typography
 .font-weight-semibold {
   font-weight: 600 !important;
 }
@@ -73,7 +73,7 @@ $card-spacer-content: 16px;
   line-height: normal !important;
 }
 
-// 👉 for rtl only
+// for rtl only
 .flip-in-rtl {
   @include layoutsMixins.rtl {
     transform: scaleX(-1);

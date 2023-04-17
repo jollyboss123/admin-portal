@@ -1,14 +1,14 @@
 @use "@core/scss/base/utils";
 @use "@configured-variables" as variables;
 
-// 👉 Application
-// ℹ️ We need accurate vh in mobile devices as well
+// Application
+// We need accurate vh in mobile devices as well
 .v-application__wrap {
   /* stylelint-disable-next-line liberty/use-logical-spec */
   min-height: calc(var(--vh, 1vh) * 100);
 }
 
-// 👉 Typography
+// Typography
 h1,
 h2,
 h3,
@@ -35,7 +35,7 @@ h6,
   color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 }
 
-// 👉 Grid
+// Grid
 // Remove margin-bottom of v-input_details inside grid (validation error message)
 .v-row {
   .v-col,
@@ -46,7 +46,7 @@ h6,
   }
 }
 
-// 👉 Theme
+// Theme
 .v-theme--light {
   --v-theme-background:
     var(
@@ -73,7 +73,7 @@ h6,
     ) !important;
 }
 
-// 👉 Button
+// Button
 @if variables.$vuetify-reduce-default-compact-button-icon-size {
   .v-btn--density-compact.v-btn--size-default {
     .v-btn__content > svg {
@@ -84,7 +84,7 @@ h6,
   }
 }
 
-// 👉 Card
+// Card
 // Removes padding-top for immediately placed v-card-text after itself
 .v-card-text {
   & + & {
@@ -93,9 +93,9 @@ h6,
 }
 
 /*
-  👉 Checkbox & Radio Ripple
+  Checkbox & Radio Ripple
 
-  TODO Checkbox and switch component. Remove it when vuetify resolve the extra spacing: https://github.com/vuetifyjs/vuetify/issues/15519
+  TODO: Checkbox and switch component. Remove it when vuetify resolve the extra spacing: https://github.com/vuetifyjs/vuetify/issues/15519
   We need this because form elements likes checkbox and switches are by default set to height of textfield height which is way big than we want
   Tested with checkbox & switches
 */
@@ -139,7 +139,7 @@ h6,
 }
 
 /*
-  👉 Tabs
+  Tabs
   Disable tab transition
 
   This is for tabs where we don't have card wrapper to tabs and have multiple cards as tab content.
@@ -162,7 +162,7 @@ h6,
   }
 }
 
-// 👉 List
+// List
 .v-list {
   // Set icons opacity to .87
   .v-list-item__prepend > .v-icon,
@@ -171,10 +171,10 @@ h6,
   }
 }
 
-// 👉 Card list
+// Card list
 
 /*
-  ℹ️ Custom class
+  Custom class
 
   Remove list spacing inside card
 
@@ -212,7 +212,7 @@ h6,
   }
 }
 
-// 👉 Table
+// Table
 .v-table {
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }

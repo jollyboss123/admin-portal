@@ -3,7 +3,7 @@
 @use "@layouts/styles/placeholders";
 @use "@configured-variables" as variables;
 
-// 👉 Avatar group
+// Avatar group
 .v-avatar-group {
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@
   }
 }
 
-// ℹ️ We are make even width of all v-timeline body
+// We are make even width of all v-timeline body
 .v-timeline--vertical.v-timeline {
   .v-timeline-item {
     .v-timeline-item__body {

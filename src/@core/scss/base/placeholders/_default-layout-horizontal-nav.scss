@@ -5,7 +5,7 @@
 %default-layout-horizontal-nav-navbar-and-nav-container {
   @include elevation.elevation(3);
 
-  // ℹ️ 1000 is v-window z-index
+  // 1000 is v-window z-index
   z-index: 1001;
   background-color: rgb(var(--v-theme-surface));
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-import type { PropType } from 'vue'
 import { useLayouts } from '@layouts'
 import { VerticalNav } from '@layouts/components'
 import type { VerticalNavItems } from '@layouts/types'
+import type { PropType } from 'vue'
 
 export default defineComponent({
   props: {
@@ -24,7 +24,7 @@ export default defineComponent({
     const isLayoutOverlayVisible = ref(false)
     const toggleIsOverlayNavActive = useToggle(isOverlayNavActive)
 
-    // ℹ️ This is alternative to below two commented watcher
+    // This is alternative to below two commented watcher
     // We want to show overlay if overlay nav is visible and want to hide overlay if overlay is hidden and vice versa.
     syncRef(isOverlayNavActive, isLayoutOverlayVisible)
 
@@ -38,7 +38,7 @@ export default defineComponent({
     //   if (!value) isOverlayNavActive.value = false
     // })
 
-    // ℹ️ Hide overlay if user open overlay nav in <md and increase the window width without closing overlay nav
+    // Hide overlay if user open overlay nav in <md and increase the window width without closing overlay nav
     watch(windowWidth, value => {
       if (!isLessThanOverlayNavBreakpoint.value(value) && isLayoutOverlayVisible.value)
         isLayoutOverlayVisible.value = false
@@ -52,7 +52,7 @@ export default defineComponent({
 
       const { wrapper: verticalNavWrapper, wrapperProps: verticalNavWrapperProps, ...additionalVerticalNavAttrs } = verticalNavAttrs.value
 
-      // 👉 Vertical nav
+      // Vertical nav
       const verticalNav = h(
         VerticalNav,
         { isOverlayNavActive: isOverlayNavActive.value, toggleIsOverlayNavActive, navItems: props.navItems, ...additionalVerticalNavAttrs },
@@ -62,7 +62,7 @@ export default defineComponent({
         },
       )
 
-      // 👉 Navbar
+      // Navbar
       const navbar = h(
         'header',
         { class: ['layout-navbar', { 'navbar-blur': isNavbarBlurEnabled.value }] },
@@ -77,10 +77,10 @@ export default defineComponent({
         ],
       )
 
-      // 👉 Content area
+      // Content area
       let mainChildren = slots.default?.()
 
-      // 💡 Only show loading and attach `beforeEach` & `afterEach` hooks if `content-loading` slot is used
+      // Only show loading and attach `beforeEach` & `afterEach` hooks if `content-loading` slot is used
       if (slots['content-loading']) {
         router.beforeEach(() => {
           console.info('setting to true')
@@ -100,7 +100,7 @@ export default defineComponent({
         h('div', { class: 'page-content-container' }, mainChildren),
       )
 
-      // 👉 Footer
+      // Footer
       const footer = h(
         'footer',
         { class: 'layout-footer' },
@@ -113,7 +113,7 @@ export default defineComponent({
         ],
       )
 
-      // 👉 Overlay
+      // Overlay
       const layoutOverlay = h(
         'div',
         {
@@ -197,7 +197,7 @@ export default defineComponent({
     @include mixins.boxed-content;
   }
 
-  // 👉 Layout overlay
+  // Layout overlay
   .layout-overlay {
     position: fixed;
     z-index: variables.$layout-overlay-z-index;
@@ -224,7 +224,7 @@ export default defineComponent({
     padding-inline-start: variables.$layout-vertical-nav-collapsed-width;
   }
 
-  // 👉 Content height fixed
+  // Content height fixed
   &.layout-content-height-fixed {
     .layout-content-wrapper {
       max-block-size: calc(var(--vh) * 100);

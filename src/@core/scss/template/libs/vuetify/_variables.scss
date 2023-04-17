@@ -12,13 +12,13 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
     1: (0 2px 1px -1px var(--v-shadow-key-umbra-opacity)),
     2: (0 3px 1px -2px var(--v-shadow-key-umbra-opacity)),
 
-    // ℹ️ Modified
+    // Modified
     3: (0 4px 14px -4px var(--v-shadow-key-umbra-opacity)),
 
     4: (0 2px 4px -1px var(--v-shadow-key-umbra-opacity)),
     5: (0 3px 5px -1px var(--v-shadow-key-umbra-opacity)),
 
-    // ℹ️ Modified
+    // Modified
     6: (0 4px 5px -2px var(--v-shadow-key-umbra-opacity)),
 
     7: (0 4px 5px -2px var(--v-shadow-key-umbra-opacity)),
@@ -46,13 +46,13 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
     1: (0 1px 1px 0 $shadow-key-penumbra-opacity-custom),
     2: (0 2px 2px 0 $shadow-key-penumbra-opacity-custom),
 
-    // ℹ️ Modified
+    // Modified
     3: (0 4px 8px -4px $shadow-key-penumbra-opacity-custom),
 
     4: (0 4px 5px 0 $shadow-key-penumbra-opacity-custom),
     5: (0 5px 8px 0 $shadow-key-penumbra-opacity-custom),
 
-    // ℹ️ Modified
+    // Modified
     6: (0 2px 10px 1px $shadow-key-penumbra-opacity-custom),
 
     7: (0 7px 10px 1px $shadow-key-penumbra-opacity-custom),
@@ -80,13 +80,13 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
     1: (0 1px 3px 0 $shadow-key-ambient-opacity-custom),
     2: (0 1px 5px 0 $shadow-key-ambient-opacity-custom),
 
-    // ℹ️ Modified
+    // Modified
     3: (0 4px 8px -4px $shadow-key-ambient-opacity-custom),
 
     4: (0 1px 10px 0 $shadow-key-ambient-opacity-custom),
     5: (0 1px 14px 0 $shadow-key-ambient-opacity-custom),
 
-    // ℹ️ Modified
+    // Modified
     6: (0 2px 16px 1px $shadow-key-ambient-opacity-custom),
 
     7: (0 2px 16px 1px $shadow-key-ambient-opacity-custom),
@@ -109,7 +109,7 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
     24: (0 9px 46px 8px $shadow-key-ambient-opacity-custom)
   ) !default,
 
-  // 👉 Typography
+  // Typography
   $typography: (
     "h1": (
       "weight": 500,
@@ -160,40 +160,40 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
     )
   ) !default,
 
-  // 👉 Card
+  // Card
   $card-item-padding: 15px 20px !default,
   $card-title-letter-spacing: 0.0094rem !default,
   $card-subtitle-opacity: 1 !default,
 
-  // 👉 Tooltip
+  // Tooltip
   $tooltip-background-color:#212121 !default,
   $tooltip-border-radius: 4px !default,
   $tooltip-padding: 4px 8px !default,
 
-  // 👉 Alert
+  // Alert
   $alert-title-font-size: 1rem !default,
   $alert-border-radius: 5px !default,
   $alert-title-letter-spacing: 0.15px !default,
 
-  // 👉 Badge
+  // Badge
   $badge-border-color:rgb(var(--v-theme-surface)) !default,
 
-  // 👉 Button
+  // Button
   $button-height: 38px !default,
   $button-elevation: ("default": 3, "hover": 4, "active": 8) !default,
   $button-border-radius: 5px !default,
   $button-padding-ratio: 1.7 !default,
   $button-text-letter-spacing: 0.025rem !default,
 
-  // 👉 Dialog
+  // Dialog
   $dialog-card-header-padding: 20px !default,
   $dialog-card-header-text-padding-top: 0 !default,
   $dialog-card-text-padding: 20px !default,
 
-  // 👉 Chip
+  // Chip
   $chip-label-border-radius: 4px !default,
 
-  // 👉 Expansion panel
+  // Expansion panel
   $expansion-panel-title-padding: 16px 20px !default,
   $expansion-panel-title-font-size: 1rem !default,
   $expansion-panel-disabled-overlay: 0 !default,
@@ -201,27 +201,27 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
   $expansion-panel-title-min-height: 51px !default,
   $expansion-panel-text-padding: 0 20px 20px !default,
 
-  // 👉 Menu
+  // Menu
   $menu-content-border-radius: 5px !default,
 
-  // 👉 List
+  // List
   $list-subheader-text-opacity: 1 !default,
 
-  // 👉 Snackbar
+  // Snackbar
   $snackbar-background:#212121 !default,
   $snackbar-border-radius: 4px !default,
   $snackbar-color: rgb(var(--v-theme-on-primary)) !default,
 
-  // 👉 Tabs
+  // Tabs
   $tabs-height: 40px !default,
 
-  // 👉 Timeline 
+  // Timeline 
   $timeline-dot-size: 34px !default,
   $timeline-dot-divider-background: transparent !default,
 
-  // 👉 Overlay
+  // Overlay
   $overlay-opacity: 0.5 !default,
 
-  // 👉 Navigation Drawer
+  // Navigation Drawer
   $navigation-drawer-scrim-opacity:0.5 !default,
 );

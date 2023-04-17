@@ -12,7 +12,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 <template>
   <div class="misc-wrapper">
     <div class="misc-center-content text-center mb-4">
-      <!-- 👉 Title and subtitle -->
+      <!-- Title and subtitle -->
       <h1 class="text-h1">
         401
       </h1>
@@ -22,7 +22,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
       <p>You don't have permission to access this page. Go Home!</p>
     </div>
 
-    <!-- 👉 Image -->
+    <!-- Image -->
     <div class="misc-avatar w-100 text-center">
       <VImg
         :src="page401"
@@ -38,7 +38,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
       </VBtn>
     </div>
 
-    <!-- 👉 Footer -->
+    <!-- Footer -->
     <VImg
       :src="tree2"
       class="misc-footer-tree d-none d-md-block"
